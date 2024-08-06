@@ -1,0 +1,186 @@
+@import "other.css";
+/* Burda diğer css dosylarındaki kodları da buraya aktarmış oldum.*/
+
+h1 {
+    /* Burada bütün h1 etiketlerini seçip etki ediliyor.*/
+    color: blue;
+}
+
+#title {
+    /* # işaretinin sağına spesifik bir ID seçmek için istenen ID adı yazılır.*/
+    color: brown;
+}
+
+div#title {
+    /* # işaretinin soluna ise spesifik bir etiket seçmek için istenen etiket adı yazılır.*/
+    color: aqua;
+}
+
+/* --------------------------------------------- */
+
+.color-red {
+    /* Burada . işareti bir class belirtir ve .'dan sonraki kısıma classın adı yazılır. O class ismine sahip etiketlere etki eder.*/
+    color: red;
+}
+
+.background-color {
+    background-color: blue;
+}
+
+.color-red.background-color {
+    /* color-red ve background-color classlarına sahip olan etiketlere etki eder. */
+    color: blueviolet;
+    background-color: chocolate;
+}
+
+p.color-red.background-color#mainP {
+    /*p etiketi olan, color-red ve background-color classlarına sahip olan ve ID'si mainP olan etiketlere etki eder.*/
+    color: green;
+    background-color: black;
+}
+
+/* --------------------------------------------- */
+
+div,
+p,
+h6 {
+    color: green;
+    /* birden fazla etiket seçebilir hepsini seçmek için *{} veya bir etiketin içindeki tüm etiketleri seçmek için örn: div *{} (yıldız yerine spesifik etiket konulabilir.) kullanırız.*/
+}
+
+/* --------------------------------------------- */
+
+.box .bold {
+    /* box class'ının içerisindeki bold class'a ait etiketleri etkiler. (Torun Seçici)*/
+    color: red;
+    /* Arada boşluk varsa içeriye giriyor ancak yoksa ve ekiyle bağlıyor.*/
+}
+
+/* --------------------------------------------- */
+
+p>b {
+    /* Burada  p>b işareti p'nin b'nin ebevveyni olması gerektriğini gösteriyor. (Çocuk Seçici)*/
+    color: red;
+}
+
+p>em {
+    /* Burada  p>em işareti p'nin em'nin ebevveyni olması gerektriğini gösteriyor. (Çocuk Seçici)*/
+    color: blue;
+}
+
+/* --------------------------------------------- */
+
+.kutu+p b {
+    /* Burada .kutu class'ına sahip etiketten sonra gelen anlamına gelen + işareti kullanılır. (Bitişik Kardeş Seçici)*/
+    color: red;
+    /* .kutu'dan sonra gelen p etiketinin içindeki b etiketinin rengini kırmızı yapar.*/
+}
+
+/* --------------------------------------------- */
+
+ul li.list2~li {
+    /* Burada ul içindeki list2 class'ına ait li etiketinden sonra gelen tüm li'lerin rengini mavi yap komutu var. (Genel Kardeş Seçici)*/
+    color: red;
+}
+
+/* --------------------------------------------- */
+
+a[title] {
+    /* a etiketlerinde title niteliğine sahiplere etki eder. ([nitelik] Seçici)*/
+    background-color: red;
+}
+
+a[title="Tıkla"] {
+    /* a etiketlerinde title="Tıkla" niteliğine sahiplere etki eder. ([nitelik] Seçici)*/
+    background-color: green;
+}
+
+a[title~="buraya"] {
+    /* ~ a etiketlerinde title niteliğinin içinde "buraya" kelimesini içerenleri (boşluklu) bold yapar. ([nitelik] Seçici)*/
+    font-weight: bold;
+}
+
+a[title|="buraya"] {
+    /* | İlk kelimesi eşleşen ve sadece "-" ile boşluk kullanılarnları siyah yapar.*/
+    color: black;
+}
+
+a[title^="buraya"] {
+    /* ^ İlk kelimesi eşleşenleri siyah yapar.*/
+    color: black;
+}
+
+a[title$="Metin"] {
+    /* $ Son kelimesi eşleşenleri yeşil yapar.*/
+    color: green;
+}
+
+a[title*="aya"] {
+    /* * Kelimeyle eşleşenleri ve küçük büyük harf duyarılı ayrılanları sarı yapar.*/
+    color: yellow;
+}
+
+a[title*="Met" i] {
+    /* * Kelimeyle eşleşenleri ve boşluksuz ayrılanları sarı yapar.*/
+    color: pink;
+}
+
+/* --------------------------------------------- */
+
+.afterExample::after {
+    content: "SONRAKİ YAZI";
+    color: red;
+}
+
+.beforeExample::before {
+    /* Bir etiketinin öncesine içerik ekleyip sadece o içeriği etkileyebiliriz. (content zorunlu)*/
+    content: "ÖNCEKİ YAZI";
+    color: blue;
+}
+
+.afterExample::after {
+    /* Bir etiketin Attribute'unu attr ile yazdırmaya yarar. (burda title yazdırdık.) */
+    content: attr(title);
+    background: yellow;
+}
+
+p.firstLetter::first-letter {
+    /*İlk harfe etki eder.*/
+    color: red;
+    font-size: 40px;
+}
+
+p.firstLine::first-line {
+    /*İlk satıra etki eder.*/
+    background: red;
+    font-size: 40px;
+}
+
+::selection {
+    /* Sayfada seçilen ögeye etki eder. (Tutup seçme)*/
+    color: black;
+    background: yellow;
+}
+
+p::selection {
+    /* Sayfada seçilen p etiketlerine etki eder. (Tutup seçme)*/
+    color: red;
+    background: blue;
+}
+
+/* --------------------------------------------- */
+
+.userName {
+    /* placeholer sonrası yazılanları etkiler.*/
+    color: blue;
+    background: black;
+}
+
+.userName::placeholder {
+    /* placeholder'ı etkiler*/
+    color: red;
+    background-color: yellow;
+    font-size: 25px;
+}
+
+/* --------------------------------------------- */

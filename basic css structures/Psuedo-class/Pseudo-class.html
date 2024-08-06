@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Öğreniyorum | Sözde Sınıflar</title>
+
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    </style> <!-- Burada yazılacak CSS kodları sadece index.html'de geçerli olacaktır.-->
+
+    <link rel="stylesheet" href="style.css"> <!-- Burda link etiketi ile css dosyamızı HTML'imize dahil ediyoruz. -->
+
+</head>
+
+<body>
+
+    <!--   SÖZDE SINIF   -->
+       
+    <h3>----   :first-child, :last-child ve :first-of-type  ----</h3>
+
+    <div class="fchild">
+        <ul class="flist">
+            <li>F 1.ELEMAN</li>
+            <li>2.ELEMAN</li>
+            <li>3.ELEMAN</li>
+        </ul>
+
+        <ul class="2flist">
+            <li>F 1.ELEMAN</li>
+            <li>2.ELEMAN</li>
+            <li>3.ELEMAN</li>
+        </ul>
+    </div>
+
+    <div class="lchild">
+        <ul class="llist">
+            <li>L 1.ELEMAN</li>
+            <li>2.ELEMAN</li>
+            <li>3.ELEMAN</li>
+        </ul>
+
+        <ul class="2llist">
+            <li>L 1.ELEMAN</li>
+            <li>2.ELEMAN</li>
+            <li>3.ELEMAN</li>
+        </ul>
+    </div>
+    
+    <br><hr>
+
+    <h3>----   :nth-child ve :nth-of-type ----</h3>
+
+    <ul class="nChild">
+        <li>1. ELEMAN</li>
+        <li>2. ELEMAN</li>
+        <li>3. ELEMAN</li>
+        <li>4. ELEMAN</li>
+        <li>5. ELEMAN</li>
+        <li>6. ELEMAN</li>
+        <li>7. ELEMAN</li>
+        <li>8. ELEMAN</li>
+        <li>9. ELEMAN</li>
+        <li>10. ELEMAN</li>
+        <li>11. ELEMAN</li>
+        <li>12. ELEMAN</li>
+    </ul>
+
+    <ul class="nType">
+        <li>1. ELEMAN</li>
+        <li>2. ELEMAN</li>
+        <li>3. ELEMAN</li>
+        <li>4. ELEMAN</li>
+        <li>5. ELEMAN</li>
+        <li>6. ELEMAN</li>
+        <li>7. ELEMAN</li>
+        <li>8. ELEMAN</li>
+        <li>9. ELEMAN</li>
+        <li>10. ELEMAN</li>
+        <li>11. ELEMAN</li>
+        <li>12. ELEMAN</li>
+    </ul>
+       
+    <br><hr>
+
+    <h3>----   :hover, :checked, :focus, :only-child, :not(), :empty ve :valid - :invalid ----</h3>
+
+    <button type="button" class="hideList">Gizle</button>
+
+    <ul class="hoverList">
+        <li>gizli</li>
+        <li>gizli</li>
+        <li>gizli</li>
+        <li>gizli</li>
+    </ul>
+
+    <br><hr>
+
+    <label>
+        <input type="radio" name="gender" value="man">
+    <span>Erkek</span>
+    </label>
+
+    <label>
+        <input type="radio" name="gender" value="woman">
+    <span>Kadın</span>
+    </label>
+
+    <input type="checkbox" id="cb" class="cb">
+    <label class="button" for="cb" show="Göster" hide="Gizle"></label>
+    <div class="hideDiv">Lorem ipsum dolor sit amet.</div>
+
+    <br><hr>
+
+    <button class="submitFocus">Gönder</button>
+    <input type="text" class="inputFocus">
+    <div class="divFocus" tabindex="0">Burası div etiketi.</div> <!-- tabindex odaklanabilmesini sağlar. İçerisindeki numara ise tab ile sıraya sokar.-->
+    <ul class="ulFocus" tabindex="0">
+        <li>ELEMAN</li>
+        <li>ELEMAN</li>
+        <li>ELEMAN</li>
+    </ul>
+
+    <br><hr>
+
+    <ul>
+        <li>liste</li>
+    </ul>
+
+    <ul>
+        <li>liste</li>
+        <li>
+            <ul>
+                <li>liste</li>
+            </ul>
+        </li>
+    </ul>
+
+    <br><hr>
+
+    <abbr title="abbr" class="test">1. Abbr</abbr>
+    <abbr class="notAbbr">2. Abbr</abbr>
+    <abbr class="not"> 3. Abbr</abbr>
+    
+    <br><hr>
+
+    <ul>
+        <li></li>
+        <li>liste</li>
+        <li>liste</li>
+    </ul>
+
+    <div class="exampleEmpty"></div>
+    <div class="loading-text">Yükleniyor..</div>
+
+    <br><hr>
+    <input type="text" id="validExample" class="validExample" minlength="3" required
+    placeholder="Adınız">
+    <span></span>
+
+
+    <br><hr>
+
+    <h3>----   :enabled, :disabled, :optioanl, :required, :read-only ve :read-write   ----</h3>
+
+    <input type="text" class="enabled" placeholder="Aktif">
+    <input type="text" class="disabled" disabled placeholder="Deaktif" >
+
+    <hr>
+
+    <input type="text" class="notRequired" placeholder="Gereksiz">
+    <input type="text" class="required" required placeholder="Gerekli">
+
+    <hr>
+
+    <input type="text" class="read-write" placeholder="Yazılabilir">
+    <input type="text" class="read-only" readonly value="Yazılamaz">
+
+    <hr>
+
+    <p contenteditable class="read-write"> Paragraf etiketi.</p> <!-- "contenteditable" içeriği düzenlenebilir bir getirebilir etiket haline getirir.-->
+    <p class="read-only"> Paragraf etiketi.</p>
+
+
+     <br><hr>
+
+     <h3>----   :active, :link, :visited ve :any-link   ----</h3>
+
+     <nav >
+        <a href="https://www.youtube.com" class="link1">Aktif Link</a>
+        <a href="https://www.tiktok.com ›" class="link2">Ziyaret Edilmemiş Link</a>
+        <a href="https://www.youtube.com" class="link3">Ziyaret Edilmiş Link</a>
+     </nav>
+     
+     <br>
+
+     <nav class="navLink">
+        <a href="" class="link4">geçerli</a>
+        <a href="" class="link4">geçerli</a>
+        <a class="link5">geçersiz</a>
+        <a href="" class="link4">geçerli</a>
+     </nav>
+
+
+     <br><hr>
+
+     <h3>----  :target  ----</h3>
+
+     <nav>
+        <a href="#p1" >1. Paragraf'a Git.</a>
+        <a href="#p2" >2. Paragraf'a Git.</a>
+        <a href="#p3" >3. Paragraf'a Git.</a>
+        <a href="#p4" >4. Paragraf'a Git.</a>
+        <a href="#p5" >5. Paragraf'a Git.</a>
+        <a href="#p6" >6. Paragraf'a Git.</a>
+        <a href="#p7" >7. Paragraf'a Git.</a>
+        <a href="#p8" >8. Paragraf'a Git.</a>
+        <a href="#p9" >9. Paragraf'a Git.</a>
+        <a href="#p10" >10. Paragraf'a Git.</a>
+     </nav>
+
+     <div class="targetDiv">
+        <p id="p1">Lorem ipsum dolor sit amet.</p>
+        <p id="p2">Lorem ipsum dolor sit amet.</p>
+        <p id="p3">Lorem ipsum dolor sit amet.</p>
+        <p id="p4">Lorem ipsum dolor sit amet.</p>
+        <p id="p5">Lorem ipsum dolor sit amet.</p>
+        <p id="p6">Lorem ipsum dolor sit amet.</p>
+        <p id="p7">Lorem ipsum dolor sit amet.</p>
+        <p id="p8">Lorem ipsum dolor sit amet.</p>
+        <p id="p9">Lorem ipsum dolor sit amet.</p>
+        <p id="p10">Lorem ipsum dolor sit amet.</p>
+     </div>
+
+     <br><hr>
+
+     <h3>----  :in-range ve :out-of-range  ----</h3>
+
+     <input id="range" type="number" min="5" max="10" value="15">
+
+     <br><hr>
+     
+     <h3>----  :root  ----</h3>
+
+     <p>:root, en üst düzey ebeveyn öğesini temsil eder. Bu HTML'de "html" etiketidir.</p>
+
+
+
+
+      
+
+    
+
+    
+
+
+
+
+    
+
+     
+     
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+    
+
+
+
+
+
+</body>
+
+</html>

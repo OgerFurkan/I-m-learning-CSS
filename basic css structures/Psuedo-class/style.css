@@ -1,0 +1,286 @@
+@import "other.css";
+/* Burda diğer css dosylarındaki kodları da buraya aktarmış oldum.*/
+
+h3{
+    color: white;
+    background-color: tomato;
+    font-style: italic;
+    font-size: 30px;
+
+}
+
+.flist li:first-child {
+    /* Bir etiketin ilk çocuğuna etki eder.*/
+    color: red;
+}
+
+.fchild ul:first-child {
+    /* Bir etiketin ilk çocuğuna etki eder.*/
+    color: blue;
+}
+
+.llist li:last-child {
+    /* Bir etiketin son çocuğuna etki eder.*/
+    color: yellow;
+}
+
+.lchild ul:last-child {
+    /* Bir etiketin son çocuğuna etki eder.*/
+    color: purple;
+}
+
+.fchild ul:first-of-type {
+    /* ilk veya sondan ziyade verilen tipin ilkine etki eder.*/
+    color: black;
+}
+
+.lchild ul:last-of-type {
+    /* ilk veya sondan ziyade verilen tipin sonuncusuna etki eder.*/
+    color: pink;
+}
+
+/* --------------------------------------------- */
+
+/*nth-last-child sondan seçer aynı şekilde nth-last-of-type da sondan seçer*/
+
+.nChild li:nth-child(3) {
+    /* 3. elemanı lime yapar. (Araya etiket girmesi değiştirir.)*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(3n) {
+    /* 3'ün katları olan elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(3n+2) {
+    /* 2'den başlayarak 3'ün katları olan elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(n+8) {
+    /* 8'den sonraki elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(-n+8) {
+    /* 8'den önceki elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(n+4):nth-child(-n+8) {
+    /* [4-8]. elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(even) {
+    /* çift olan elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nChild li:nth-child(odd) {
+    /* tek olan elemanları lime yapar.*/
+    background-color: lime;
+}
+
+.nType li:nth-of-type(even) {
+    /* Tipe göre yapıyor araya etiket girmesi değiştirmez.*/
+    background-color: red
+}
+
+/* --------------------------------------------- */
+/* Üzerine geldiğinde etki eder.*/
+
+.hideList:hover+.hoverList {
+    /* Button'un üstüne geldiğinde listeyi gizle.*/
+    display: none;
+}
+
+.hoverList li:hover {
+    /* listenin üstünedeki elemanlara geldiğinde arka planı lime yap.*/
+    background-color: lime;
+}
+
+.hoverList li:hover::selection {
+    /* listenin üstünedeki elemanları seçtiğindeki renge etki eder.*/
+    color: pink;
+    background-color: black;
+}
+
+/* --------------------------------------------- */
+
+input[name="gender"]:checked+span {
+    /* İşaretli mi kontrolü.*/
+    color: green;
+}
+
+.button::before {
+    content: attr(hide);
+    color: red;
+}
+
+.cb:checked+.button::before {
+    content: attr(show);
+    color: green;
+}
+
+.cb:checked+.button+.hideDiv {
+    display: none;
+}
+
+/* -- 1-) Önce Label'ın soluna Gizli yazdık.
+      2-) Sonra Radio checked ise Label'ın soluna Göster Yazdık.
+      3-) Sonra Radio checked ise radio'dan sonraki Label'dan sonraki
+      div'i gizledik.
+      ---- */
+/* --------------------------------------------- */
+
+:focus {
+    /* Etikete odaklanma ve ona etki etme. */
+    outline: none;
+}
+
+.submitFocus:focus {
+    /* Burada button'un arka plan ve yazı rengine etki ettik.*/
+    background-color: lime;
+    color: white;
+}
+
+.inputFocus:focus {
+    background-color: red;
+    color: lime;
+    border-color: pink;
+}
+
+.divFocus:focus {
+    background-color: red;
+}
+
+.ulFocus:focus-within {
+    /* Ebeveyne etki eder.*/
+    background-color: aqua;
+}
+
+/* --------------------------------------------- */
+
+/* Eğer tek çocuklu değil ve aynı etiket değilse etki etmez. O zaman only-of-type kullanılmalı.*/
+li:only-child {
+    /* Tek çocuklu ebeveynlerin çocuklarına etki eder.*/
+    color: red;
+}
+
+/* --------------------------------------------- */
+
+abbr:not([title]) {
+    /* Olmayanı belirler.*/
+    color: red;
+}
+
+abbr:not([title]):not(.notAbbr) {
+    /* title'ı olmayan ve notAbbr class'ından olmayanlara etki eder.*/
+    color: lime;
+}
+
+/* --------------------------------------------- */
+
+li:empty {
+    /* İçeriği tmaamen boş olanları gizle.*/
+    display: none;
+}
+
+.exampleEmpty:not(:empty)+.loading-text {
+    /* Eğer exampleEmpty boş değilse bitişik kardeşi loading-text'i gizle.*/
+    display: none;
+}
+
+/* --------------------------------------------- */
+
+.validExample:valid {
+    /* Geçerli ise validExample'a etki eder.*/
+    border-color: green;
+}
+
+.validExample:valid+span::before {
+    /* Geçerli ise validExample'ın Bitişik Kardeşi olan span'ın yanına content ekler.*/
+    content: "✓";
+    color: green;
+}
+
+.validExample:invalid {
+    /* Geçersiz ise validExample'a etki eder.*/
+    border-color: red;
+}
+
+.validExample:invalid+span::after {
+    /* Geçersiz ise validExample'ın Bitişik Kardeşi olan span'ın yanına content ekler.*/
+    content: "×";
+    color: red;
+}
+
+/* --------------------------------------------- */
+/* Genel olarak form elemanlarında geçerli bazı attribute'lere sahip olan etiketlere 
+etki etmek için kullanılır.*/
+.enabled:enabled {
+
+    background-color: lime;
+}
+
+.disabled:disabled {
+    background-color: red;
+}
+
+.notRequired:optional {
+    background-color: lime;
+}
+
+.required:required {
+    background-color: red;
+}
+
+.read-write:read-write {
+    background-color: lime;
+}
+
+.read-only:read-only {
+    background-color: red;
+}
+
+/* --------------------------------------------- */
+
+.link1:active{   /* Tıklanan linke tıklandığı sürece etki eder.*/
+    background-color: yellow;
+    color: red;
+}
+
+.link2:link{ /*Ziyaret edilmemiş linklere etki eder.*/
+    background-color: green;
+    color: black;
+}
+
+.link3:visited{ /*Ziyaret edilmiş linklere etki eder.*/
+    color: red;
+}
+
+.navLink a:any-link{ /*Bağlantı linkine sahip linklere etki eder.*/
+    background-color: lime;
+}
+
+/* --------------------------------------------- */
+
+.targetDiv p:target{  /* Belirli bir elementin hedeflendiği durumu stilize etmek için kullanılır.*/
+    background-color: yellow;
+}
+
+/* --------------------------------------------- */
+ #range:in-range{       /* valid ve invalid ile de kullanılablir. Aralıklara sahip elementi stilize eder.*/
+    background-color: lime;
+ }
+
+ #range:out-of-range{
+    background-color: red;
+ }
+
+ /* --------------------------------------------- */
+ 
+
+

@@ -1,0 +1,261 @@
+:root {
+    background-color: beige;
+}
+
+h1 {
+
+    background-color: tomato;
+    color: white;
+    font-size: 40px;
+}
+
+/*------------------------------------------------------------*/
+
+html,
+body {
+    /* Kapsayıcısının bir yüksekliği olmak zorunda.*/
+    height: 100%;
+}
+
+.W-H-Example {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
+#W-H-Example {
+    width: 10%;
+    /* Kesin bir değerden ziyade ebeveyninin boyutuna oranla da değer atanabilir.*/
+    height: 10%;
+    background-color: black;
+}
+
+div[name="W-H-Example"] {
+    min-width: 100px;
+    /* Max ve min yükseklik, genişliklik ayarı yapılır.*/
+    max-width: 150px;
+
+    min-height: 100px;
+    max-height: 150px;
+
+    background-color: blue;
+}
+
+.W-Content {
+    background-color: brown;
+    width: min-content;
+    /* İçeriğindeki en uzun içeriğe göre genişlik sağlar. */
+}
+
+.H-Content {
+    background-color: darksalmon;
+    writing-mode: vertical-rl;
+    /*İçeriği çevirir ve uzunluğuna göre  height'i ayarlar*/
+}
+
+/*------------------------------------------------------------*/
+
+.paddingExample {
+
+    /*İç boşluk oluşturur. (İçe etki eder.)*/
+
+    background-color: blueviolet;
+    width: 100px;
+    height: 100px;
+    padding: 50px 40px 30px 20px;
+
+    /* Saat yönünde 50px: Üst, 40px: Sağ, 30px: Alt ve 20px: Sol'a etki eder. */
+
+    /* Yani 100x100 iken üst-alt:80px ve sağ-sol: 60px etki eder yeni boyut: 160x180 olur. */
+
+    /*
+    "padding: Apx" bu şekilde verilirse her taraftan Apx oluşur.
+
+    "padding: Apx Bpx" şeklinde Üst-Alt: Apx, Sağ-Sol: Bpx oluşur.
+
+    "padding: Apx Bpx Cpx" şeklinde Üst: Apx, Sağ-Sol: Bpx, Alt: Cpx oluşur.
+     */
+}
+
+.paddingDiv {
+    background-color: deepskyblue;
+    width: 100px;
+    height: 100px;
+
+    /* Tek tek de verilebilir.*/
+
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+}
+
+/*------------------------------------------------------------*/
+
+.marginExample {
+    /* Dış boşluk oluşturur. (Dışa etki eder.)*/
+    padding: 50px;
+    background-color: green;
+
+    margin: 50px 40px 30px 20px;
+}
+
+/*
+    "margin: Apx" bu şekilde verilirse her taraftan Apx oluşur.
+
+    "margin: Apx Bpx" şeklinde Üst-Alt: Apx, Sağ-Sol: Bpx oluşur.
+
+    "margin: Apx Bpx Cpx" şeklinde Üst: Apx, Sağ-Sol: Bpx, Alt: Cpx oluşur.
+     */
+
+.marginDiv {
+    padding: 50px;
+    background-color: red;
+
+    /* Tek tek de verilebilir.*/
+
+    margin-top: 50px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+
+.marginNegative {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+
+    margin-left: -200px;
+    margin-top: -200px;
+    /*Sol ve sağa çekebiliriz "-" değer ile.*/
+}
+
+.marginAuto {
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+
+    /*En sağa en sola yaslama gibi kullanılır auto. */
+
+    margin: 0 auto 15px;
+
+    /* Elementi tam ortaya alttan 15px boşlukla ortalar*/
+}
+
+/*------------------------------------------------------------*/
+
+.borderExample {
+    /*İçe etki eder. (Yani div'in boyutu değişir.)*/
+    width: 200px;
+    height: 200px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin: 0 auto 15px;
+    background-color: aquamarine;
+
+    border: 5px dashed red;
+
+    /*
+    Bu ayrı yazılabilir border-style, border-color, border-width gibi.
+    */
+
+    /*
+    Bunlar da ayrı yazılabilir border-style: solid(üst) dashed(sağ) dotted(alt) solid(sol) gibi
+    */
+
+    /*
+    Bunlar da ayrı yazılabilir border-top-color, border-left-style gibi.
+    */
+}
+
+.borderInput:focus {
+
+    border-color: green;
+    /* border-color: transparent; (gözükmez).
+       border-left: none; O kenarı kaldırır.*/
+}
+
+.borderInput {
+    outline: none;
+    border: 3px dotted red
+}
+
+/*------------------------------------------------------------*/
+
+.outlineExample {
+    /* Dışa etki eder. (Yani div'in boyutu değişmez)*/
+    width: 200px;
+    height: 200px;
+    color: black;
+    background-color: red;
+
+    margin: 15px auto 15px;
+
+    border: 5px solid black;
+    /*
+    outline-style: solid;
+    outline-color: red;
+    outline-width: 5px;
+    */
+    outline: 5px red solid;
+    outline-offset: 5px;
+    /* Etiketle dışçizgi arasına boşluk bırakır.*/
+}
+
+/*------------------------------------------------------------*/
+
+.boxSizingExample {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+    padding: 20px;
+    border: 15px solid black;
+
+    /* box-sizing yapmazsak div:200x200 olsa bile
+    totalde padding ve border eklenir 20*2 + 15*2 = 70px fazla olur
+    270x270' e çıkar. ( ! Margin buna dahil olmaz. ! ) */
+
+    margin: 0 auto 15px;
+
+    box-sizing: border-box;
+
+    /* Bununla beraber 200x200 yani Width ve Height'e göre yapar. */
+
+    /* Bunu kullanırken " *{box-sizing: border-box;} " olarak kullanmak daha avantajlıdır. */
+}
+
+/*------------------------------------------------------------*/
+
+.radiusExample1 {/*Kenar yumuşatma için kullanılır. (farklı etiketler (örn:img) için de kullanılabilir.)*/
+    width: 200px;
+    height: 200px;
+    border: 5px red double;
+    margin: 15px auto 15px;
+
+    border-radius: 90px 75px 58px 49px;
+    /*Ayırmadan saat yönünde değer verebiliriz veya tek bir değer ile hepsini aynı yapabiliriz.*/
+}
+
+.radiusExample2 {
+    width: 200px;
+    height: 200px;
+    border: 5px blue double;
+    margin: 15px auto 15px;
+
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 100px;
+    /* Ayırıp da yumuşatabiliriz. */
+}
+
+.radiusDiv {
+    width: 200px;
+    height: 200px;
+    border: 5px black double;
+    margin: 15px auto 15px;
+
+    border-radius: 200px; 
+    /* Kare bir düzlem için H veya W değerini veya - "50%" - değerini girersek daire oluşturur. */
+}
+/*------------------------------------------------------------*/

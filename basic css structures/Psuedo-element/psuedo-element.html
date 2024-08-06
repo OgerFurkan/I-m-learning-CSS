@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Öğreniyorum | Sözde Elemanlar</title>
+
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    </style> <!-- Burada yazılacak CSS kodları sadece index.html'de geçerli olacaktır.-->
+
+    <link rel="stylesheet" href="style.css"> <!-- Burda link etiketi ile css dosyamızı HTML'imize dahil ediyoruz. -->
+
+</head>
+
+<body>
+
+
+    <!-- STYLE KULLANIMI -->
+
+    <h1>CSS Öğreniyorum</h1>
+
+    <h2 style="color: red;">CSS Öğreniyorum</h2> <!-- Burada sadece bu h2 etiketi için geçerli bir CSS'dir. -->
+
+    <h3>CSS Öğreniyorum</h3>
+    <br><hr><br>
+
+
+    <!-- STYLE İÇİN ID İLE SEÇME (ID ADI BİRDEN FAZLA OLAMAZ) -->
+
+
+    <h1>Başlık</h1>
+
+    <h1 id="title">Başlık Mavi</h1> <!-- Burada bir h1 etiketine ID verdik ve standartlara göre bu ID'yi başka bir etikete vermemiz gerekiyor.-->
+
+    <div id="title"> Div</div> <!-- Burada bir div etiketine h1 ile aynı ID verdik sadece farkı göstermek için.-->
+
+
+    <br><hr><br>
+
+    
+    <!-- STYLE İÇİN CLASS İLE SEÇME (CLASS ADI BİRDEN FAZLA OLMASI BEKLENİR)-->
+
+    <p class="color-red">Bu bir Paragraftır</p> <!-- Bir class'a sahip olan etiket. -->
+
+    <p class="background-color">Bu bir Paragraftır</p>  <!-- Bir class'a sahip olan etiket. -->
+
+    <p class="color-red background-color">Bu bir Paragraftır</p>  <!-- İki class'a sahip olan etiket. -->
+
+    <p class="color-red background-color" id="mainP">Bu bir Paragraftır.</p>  <!-- İki class'a ve ID'ye sahip olan etiket. -->
+    
+
+    <br><hr><br>
+
+
+    <!-- GRUP SEÇİCİ -->
+
+
+    <div>Bu bir div'dir.</div>
+    <p>Bu bir Paragraftır.</p>
+    <h6>Bu bir Başlıktır.</h6>
+
+    <br><hr><br>
+
+    <!-- BAZI SEÇİCİLER -->
+
+    <h3>---- Torun Seçici ----</h3>
+
+    <div class="box">
+        <strong>Bu bir metindir.</strong> ayrıca <strong class="bold">Bu da bir metindir.</strong>
+    </div>
+
+    <br><hr>
+
+    <h3>---- Çocuk Seçici ----</h3>
+
+    <p>
+        Bu bir <b>metindir</b> ve bu da bir <em>metindir</em>.
+    </p>
+
+    <p>
+        Bu bir <span><b>metindir</b></span> ve bu da bir  <span><em>metindir</em></span>.
+    </p>
+    
+    <br><hr>
+
+    <h3>---- Bitişik Kardeş Seçici ----</h3>
+
+    <div class="kutu">Div</div>
+    <p>Bu bir <b>metindir</b>.</p>
+
+    <br><hr>
+
+    <h3>---- Genel Kardeş Seçici ----</h3>
+
+    <ul>
+        <li>1. Liste</li>
+        <li class="list2">2. Liste</li>
+        <li>3. Liste</li>
+        <li>4. Liste</li>
+        <li>5. Liste</li>
+    </ul>
+
+    <br><hr>
+
+    <h3>---- [nitelik] Seçici ----</h3>
+
+    <a href="#" title="Tıkla">Buraya Tıklayın.</a>
+    <a href="#">Buraya Tıklayın 1.</a>
+    <a href="#" title="buraya">Buraya Tıklayın 2.</a>
+    <a href="#" title="buraya-Tıkla">Buraya Tıklayın 3.</a>
+    <a href="#" title="Tıkla-buraya">Buraya Tıklayın 4.</a>
+    <a href="#" title="buraya tıklayın">Buraya Tıklayın 5.</a>
+    <a href="#" title="Bu AYA">AYA</a>
+    <a href="#" title="Bu Metin">Metin.</a>
+    <a href="#" title="Bu in">in.</a>
+
+    <br><hr>
+
+    <!--   SÖZDE ÖĞESİ   -->
+       
+    <h3>----   ::after, ::before  ve attr(); ----</h3>
+ 
+    <div class="afterExample" title="attr">YAZI </div>
+    <div class="beforeExample"> YAZI</div>
+    
+
+    <br><hr>
+
+    <h3>----  ::first-letter, ::first-line, ::selection ----</h3>
+
+    <p class="firstLetter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, voluptatibus.</p>
+    <p class="firstLine">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus?</p>
+    
+
+    <br><hr>
+
+    <h3>----  ::placeholder  ----</h3>
+
+    <input class="userName" type="text" placeholder="Kullanıcı Adı">
+
+
+    <br><hr>

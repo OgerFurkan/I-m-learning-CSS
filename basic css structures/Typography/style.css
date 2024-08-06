@@ -1,0 +1,58 @@
+h1{
+    background-color: tomato;
+    font-size: 40px;
+    color: white;
+}
+
+:root{
+    background-color: beige;
+}
+
+/*----------------------------------------------------------------------*/
+
+
+/*Sonu a ile bitenlerde opaklık vardır.*/
+.test{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    background-color: rgba(226,64,14,0.2);
+    color: rgb(226, 64, 14);
+}
+
+.test2{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    background-color: hsla(202, 69%, 43%, 20%);
+    color: hsl(202, 69%, 43%);
+}
+
+.test3{
+    width: 100px;
+    height: 100px;
+    color: #000;
+    background-color: #fa000f;
+}
+
+/*----------------------------------------------------------------------*/
+
+/* Yazı tipini belirlemede kullanılır.  */
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+/* sans-serif ailenin adı oluyor.*/
+
+.font-family{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Genel veya spesifik olarak yazı tipi değiştirilebilir.*/
+
+.pFont{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*----------------------------------------------------------------------*/
+
