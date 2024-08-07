@@ -1,26 +1,27 @@
-h1{
+h1 {
     background-color: tomato;
     font-size: 40px;
     color: white;
 }
 
-:root{
+:root {
     background-color: beige;
 }
 
-/*----------------------------------------------------------------------*/
+
+/*Color----------------------------------------------------------------------*/
 
 
 /*Sonu a ile bitenlerde opaklık vardır.*/
-.test{
+.test {
     width: 100px;
     height: 100px;
     margin-bottom: 15px;
-    background-color: rgba(226,64,14,0.2);
+    background-color: rgba(226, 64, 14, 0.2);
     color: rgb(226, 64, 14);
 }
 
-.test2{
+.test2 {
     width: 100px;
     height: 100px;
     margin-bottom: 15px;
@@ -28,31 +29,333 @@ h1{
     color: hsl(202, 69%, 43%);
 }
 
-.test3{
+.test3 {
     width: 100px;
     height: 100px;
     color: #000;
     background-color: #fa000f;
 }
 
-/*----------------------------------------------------------------------*/
+/* font-family ----------------------------------------------------------------------*/
 
 /* Yazı tipini belirlemede kullanılır.  */
-body{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* sans-serif ailenin adı oluyor.*/
 
-.font-family{
+.font-family {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /*Genel veya spesifik olarak yazı tipi değiştirilebilir.*/
 
-.pFont{
+.pFont {
     font-family: 'Times New Roman', Times, serif;
 }
 
-/*----------------------------------------------------------------------*/
+/*font-size ----------------------------------------------------------------------*/
+
+.font-sizeExapmle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    /* Genelde default size 16px'dir.*/
+
+    /*
+    xx-small, x-small, small, medium, large, x-large, xx-large gibi önyüklemeli de ayarlanabilir
+    veya x% ile de ayarlanabilir. % burada ebeveyninin font-size'ına göre belirler.
+    */
+}
+
+.font-sizeEm {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.5em;
+    /*
+     1em ebevyninin font-size'ına eşitler örn body: 16px olarak kabul edelim.
+     -> 0.5em: 8px'dir. -> 2em: 32px'dir.
+     */
+}
+
+.font-sizeRem {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    /*
+     root'un (<html>) font-size'ına eşitler yani kendi ebeveynine bakmaz. html: 20px olarak kabul edelim.
+    -> 0.5rem: 10px'dir. -> 2rem: 40px'dir.
+    */
+}
+
+.font-sizeDiv {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+
+.font-sizeDiv em {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: smaller;
+    /* 
+     Mevcut ebeveyninin font-size'ından biraz daha küçük gösterir.
+    Aynı şekilde "larger" ile de biraz daha büyük gösterir.
+    */
+}
+
+/*font-style----------------------------------------------------------------------*/
+
+.font-styleI {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-style: italic;
+    /* Yazıyı eğik yapmak için kullanılır.*/
+}
+
+.font-styleO {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-style: oblique;
+    /* Bu ise yüklenen font bir eğik font ise kullanılır.*/
+}
+
+.font-styleN {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    font-style: normal;
+    /* Bu ise eğik olarak yazılmış metni normal hale çevirir.*/
+}
+
+/*font-variant----------------------------------------------------------------------*/
+
+.font-variant {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+}
+
+.font-variant span {
+    font-variant: small-caps;
+    /* Küçük yazılmış metni büyük harflerle küçük font'ta gösterir. */
+}
+
+/*font-weight----------------------------------------------------------------------*/
+
+.font-weightExample {
+    font-size: 40px;
+    font-weight: 900;
+    /*100,200,300,...,900'e kadar kalınlaştırma ve inceltme var.*/
+}
+
+.font-weightDiv {
+    font-weight: lighter;
+    /*  bolder, bold, normal, lighter gibi ön yüklemeli değerler de var.*/
+
+}
+
+/*line-height----------------------------------------------------------------------*/
+
+.line-height {
+    line-height: 3;
+    /* Satırlar arası boşluk oluşturmak için kullanılır.*/
+
+    /*
+    -> 1 - 1.5 - 3
+    -> 50px - 100px
+    -> 100% - 150%
+    -> 1em - 5em     gibi değerler alabilir.
+    */
+}
+
+/*font:----------------------------------------------------------------------*/
+
+/*
+    -> font-size 
+    -> font-family
+
+    ! Bu ikisi zorunlu. !
+
+    -> font-variant
+    -> font-stlye
+    -> font-weight
+
+    ! Bu üçlüyü tanımlamak için font-size'dan önce tanımlanması gerekiyor.
+
+    -> font-variant
+    ->line-height (line-height tanımlaması: font-size/line-height şeklinde olmalı.)
+
+    ! Geri kalan beşli opsiyonel. !
+*/
+
+.fontExample {
+    font: small-caps italic lighter 40px/3 'Times New Roman', Times, serif;
+}
+
+/*letter-spacing----word-spacing------------------------------------------------------------------*/
+
+.LW-spacing {
+    font-size: 20px;
+
+    letter-spacing: 1em;
+    /* Harfler arası boşluk bırakmak için kullanılır.*/
+    /*Negatif değerler de girilebilir iç içe sokar.*/
+
+    word-spacing: 1rem;
+    /* Kelimeler arası boşluk bırakmak için kullanılır.*/
+
+
+    /*
+    Bura için: 1em: 20px, 1rem: 16px (html: 16px), Apx de girilebilir.
+    */
+
+    /*normal değeri ile de normal hale getirilebilir.*/
+}
+
+/*text-align----------------------------------------------------------------------*/
+
+.text-align {
+    /* Sadece block-line elemanlar için geçerlidir. */
+
+    text-align: justify;
+
+    /*
+    -> center: yatay alanda ortalar.
+    -> right: yatay alanda sağa ortalar.
+    -> left: yatay alanda sola ortalar.
+    -> justify: hem sağdan, hem soldan ortalar.
+    */
+}
+
+/*text-decoration----------------------------------------------------------------------*/
+
+.text-decorationDiv {
+    font-size: 40px;
+    /*
+        text-decoration-line: underline overline line-through;
+
+        text-decoration-style: wavy;
+
+        text-decoration-color: red;
+
+            !   gibi ayrı da yazılabilir.   !
+    */
+
+    text-decoration: underline overline red double;
+
+    /* 
+    -> Metnin alt-üst-kendisini çizen çigiler. (underline, overline, line-through)
+    -> Çizginin rengi belirler. 
+    -> Çizginin stilini belirler. (wavy, solid. double, dashed, dotted)
+    */
+
+    /*
+        none özelliği çocuk elemanda işe yaramaz.
+    */
+}
+
+/*text-indent----------------------------------------------------------------------*/
+
+.text-indent {
+    text-indent: 15px;
+
+    /* Metin girintisini ayarlar. Negatif değerler de alır.
+    Örn:  Slider'larda kaydırırken değeri ekranda göstermemek için.*/
+}
+
+/*white-space----------------------------------------------------------------------*/
+
+.white-space {
+    background-color: aqua;
+    white-space: nowrap;
+    /*Tek satırdan devam eder. (<br> etiketi görene kadar.)*/
+}
+
+.white-space1 {
+    background-color: brown;
+    white-space: pre;
+    /* İçerik neyse o şekilde gösterir. (<br> etiketi alt satıra indirir.)*/
+}
+
+.white-space2 {
+    background-color: aqua;
+    white-space: pre-wrap;
+    /*
+        İçerik neyse o şekilde gösterir ancak genişkikten taşıyorsa bir alt satıra indir.
+     Bottom-Scroll çıkmaması için. (<br> etiketi alt satıra indirir.)
+    */
+}
+
+.white-space3 {
+    background-color: brown;
+    white-space: pre-line;
+    /*
+        İçeriği korumaz ancak br'siz satır yapılmışsa satırı gösterir.
+    */
+}
+
+/*text-transform----------------------------------------------------------------------*/
+
+.text-transform {
+    text-transform: capitalize;
+
+    /*
+    lowercase: Bütün harfler küçülür.
+    uppercase: Bütün harfler büyür.
+    capitalize: Her kelimenin ilk harfi büyür.
+    none: İptal eder.
+    */
+}
+
+/*word-break----------------------------------------------------------------------*/
+
+
+.word-break {
+    width: 50px;
+    border: 3px solid red;
+
+    word-break: break-all;
+    /*overflow-wrap: break-word;*/
+
+    /*Bitişik yazılmış kelimlerin hepsini kırarak çerçeveye sığdırır.*/
+}
+
+.hyphens{
+    width: 50px;
+    border:3px solid lime;
+    hyphens: auto;
+
+     /*Bitişik yazılmış kelimleri gramere göre hepsini kırarak çerçeveye sığdırır.
+     (Burada çalışmadı araştırdım ancak bulamadım sorunu. -_- )
+     */
+}
+
+/*text-shadow----------------------------------------------------------------------*/
+
+.shadow {
+    font: 900 40px 'Times New Roman';
+    text-align: center;
+
+    /* text-shadow: Yatay Dikey Bulanıklık Renk, +1*/
+    text-shadow: -5px 0 0 red, 0 5px 0 blue, 0 0 15px yellow;
+}
+
+.shadow1{
+    font: 900 50px 'impact';
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    color: #fff;
+
+    text-shadow: -10px -10px 10px red, 10px 10px 10px blue,
+    40px 0 10px rgb(10, 177, 228), -40px 0 10px rgb(10, 177, 228)
+}
+
+/* background-image----------------------------------------------------------------------*/
+ body {
+    background-image: url(/source/picture/effect.png),url(/source/picture/bg.png);
+
+    /* Burada Transparan->bg' lere doğru olmalı sıralama.*/
+
+ }
+
+
+
 
