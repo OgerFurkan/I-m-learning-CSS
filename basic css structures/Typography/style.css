@@ -59,7 +59,7 @@ body {
 
 .font-sizeExapmle {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 40px;
+    font-size: x-large;
     /* Genelde default size 16px'dir.*/
 
     /*
@@ -72,7 +72,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 0.5em;
     /*
-     1em ebevyninin font-size'ına eşitler örn body: 16px olarak kabul edelim.
+     1em ebeveyninin font-size'ına eşitler örn body: 16px olarak kabul edelim.
      -> 0.5em: 8px'dir. -> 2em: 32px'dir.
      */
 }
@@ -81,7 +81,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem;
     /*
-     root'un (<html>) font-size'ına eşitler yani kendi ebeveynine bakmaz. html: 20px olarak kabul edelim.
+     root'un (<html>) font-size'ına eşitler yani kendi ebeveynine bakmaz. html: 20px, ebeveynini de: 16px olarak kabul edelim.
     -> 0.5rem: 10px'dir. -> 2rem: 40px'dir.
     */
 }
@@ -171,20 +171,19 @@ body {
 
     ! Bu ikisi zorunlu. !
 
-    -> font-variant
     -> font-stlye
     -> font-weight
+    -> font-variant
 
     ! Bu üçlüyü tanımlamak için font-size'dan önce tanımlanması gerekiyor.
 
-    -> font-variant
-    ->line-height (line-height tanımlaması: font-size/line-height şeklinde olmalı.)
+    -> line-height (line-height tanımlaması: font-size/line-height şeklinde olmalı.)
 
-    ! Geri kalan beşli opsiyonel. !
+    ! Geri kalan dörtlü opsiyonel. !
 */
 
 .fontExample {
-    font: small-caps italic lighter 40px/3 'Times New Roman', Times, serif;
+    font: small-caps/*font-variant*/ italic/*font-style*/ lighter/*font-weight*/ 40px/3 /*font-size / line-height*/ 'Times New Roman', Times, serif /*font-family*/;
 }
 
 /*letter-spacing----word-spacing------------------------------------------------------------------*/
@@ -204,7 +203,7 @@ body {
     Bura için: 1em: 20px, 1rem: 16px (html: 16px), Apx de girilebilir.
     */
 
-    /*normal değeri ile de normal hale getirilebilir.*/
+    /*normal değeri ile de normal hale getirilebilir. (letter-spacing: normal;)*/
 }
 
 /*text-align----------------------------------------------------------------------*/
@@ -218,7 +217,7 @@ body {
     -> center: yatay alanda ortalar.
     -> right: yatay alanda sağa ortalar.
     -> left: yatay alanda sola ortalar.
-    -> justify: hem sağdan, hem soldan ortalar.
+    -> justify: hem sağdan, hem soldan içerikle beraber ortalar.
     */
 }
 
@@ -245,7 +244,7 @@ body {
     */
 
     /*
-        none özelliği çocuk elemanda işe yaramaz.
+        "none" özelliği eğer ebeveyninde decoration var ise çocuk elemana yazılması işe yaramaz.
     */
 }
 
@@ -321,7 +320,7 @@ body {
     hyphens: auto;
 
      /*Bitişik yazılmış kelimleri gramere göre hepsini kırarak çerçeveye sığdırır.
-     (Burada çalışmadı araştırdım ancak bulamadım sorunu. -_- )
+     (Burada çalışmadı. Araştırdım ancak bulamadım sorunu. -_- )
      */
 }
 
@@ -348,13 +347,6 @@ body {
     40px 0 10px rgb(10, 177, 228), -40px 0 10px rgb(10, 177, 228)
 }
 
-/* background-image----------------------------------------------------------------------*/
- body {
-    background-image: url(/source/picture/effect.png),url(/source/picture/bg.png);
-
-    /* Burada Transparan->bg' lere doğru olmalı sıralama.*/
-
- }
 
 
 

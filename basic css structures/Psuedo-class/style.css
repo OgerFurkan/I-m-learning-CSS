@@ -30,12 +30,12 @@ h3{
 }
 
 .fchild ul:first-of-type {
-    /* ilk veya sondan ziyade verilen tipin ilkine etki eder.*/
+    /* ilk veya son çocuktan ziyade verilen tipin ilkine etki eder.*/
     color: black;
 }
 
 .lchild ul:last-of-type {
-    /* ilk veya sondan ziyade verilen tipin sonuncusuna etki eder.*/
+    /* ilk veya son çocuktan ziyade verilen tipin sonuncusuna etki eder.*/
     color: pink;
 }
 
@@ -91,7 +91,7 @@ h3{
 /* --------------------------------------------- */
 /* Üzerine geldiğinde etki eder.*/
 
-.hideList:hover+.hoverList {
+.hideListButton:hover+.hoverList {
     /* Button'un üstüne geldiğinde listeyi gizle.*/
     display: none;
 }
@@ -137,11 +137,11 @@ input[name="gender"]:checked+span {
 
 :focus {
     /* Etikete odaklanma ve ona etki etme. */
-    outline: none;
+    outline: none; /* Dış çizgiyi iptal eder. */
 }
 
 .submitFocus:focus {
-    /* Burada button'un arka plan ve yazı rengine etki ettik.*/
+    /* Burada focus olunca button'un arka plan ve yazı rengine etki ettik.*/
     background-color: lime;
     color: white;
 }
@@ -184,7 +184,7 @@ abbr:not([title]):not(.notAbbr) {
 /* --------------------------------------------- */
 
 li:empty {
-    /* İçeriği tmaamen boş olanları gizle.*/
+    /* İçeriği tamamen boş olanları gizle.*/
     display: none;
 }
 
@@ -218,6 +218,7 @@ li:empty {
 }
 
 /* --------------------------------------------- */
+
 /* Genel olarak form elemanlarında geçerli bazı attribute'lere sahip olan etiketlere 
 etki etmek için kullanılır.*/
 .enabled:enabled {

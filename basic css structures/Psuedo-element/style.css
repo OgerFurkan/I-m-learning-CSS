@@ -12,14 +12,14 @@ h1 {
 }
 
 div#title {
-    /* # işaretinin soluna ise spesifik bir etiket seçmek için istenen etiket adı yazılır.*/
+    /* # işaretinin soluna ise spesifik bir etiket seçmek için istenen etiket türünün adı yazılır.*/
     color: aqua;
 }
 
 /* --------------------------------------------- */
 
 .color-red {
-    /* Burada . işareti bir class belirtir ve .'dan sonraki kısıma classın adı yazılır. O class ismine sahip etiketlere etki eder.*/
+    /* Burada "." işareti bir class belirtir ve "."'dan sonraki kısıma classın adı yazılır. O class ismine sahip etiketlere etki eder.*/
     color: red;
 }
 
@@ -28,7 +28,7 @@ div#title {
 }
 
 .color-red.background-color {
-    /* color-red ve background-color classlarına sahip olan etiketlere etki eder. */
+    /* color-red ve background-color class adına sahip olan etiketlere etki eder. */
     color: blueviolet;
     background-color: chocolate;
 }
@@ -59,12 +59,12 @@ h6 {
 /* --------------------------------------------- */
 
 p>b {
-    /* Burada  p>b işareti p'nin b'nin ebevveyni olması gerektriğini gösteriyor. (Çocuk Seçici)*/
+    /* Burada  p>b işareti p'nin b'nin ebeveyni olması gerektriğini gösteriyor. (Çocuk Seçici)*/
     color: red;
 }
 
 p>em {
-    /* Burada  p>em işareti p'nin em'nin ebevveyni olması gerektriğini gösteriyor. (Çocuk Seçici)*/
+    /* Burada  p>em işareti p'nin em'nin ebeveyni olması gerektriğini gösteriyor. (Çocuk Seçici)*/
     color: blue;
 }
 
@@ -116,7 +116,7 @@ a[title$="Metin"] {
 }
 
 a[title*="aya"] {
-    /* * Kelimeyle eşleşenleri ve küçük büyük harf duyarılı ayrılanları sarı yapar.*/
+    /*   * Kelimeyle eşleşenleri ve küçük büyük harf duyarılı ayrılanları sarı yapar.*/
     color: yellow;
 }
 
@@ -128,7 +128,7 @@ a[title*="Met" i] {
 /* --------------------------------------------- */
 
 .afterExample::after {
-    content: "SONRAKİ YAZI";
+    content: "SONRAKİ YAZI"; /* Bir etiketinin sonrasına içerik ekleyip sadece o içeriği etkileyebiliriz. (content zorunlu)*/
     color: red;
 }
 
@@ -139,7 +139,7 @@ a[title*="Met" i] {
 }
 
 .afterExample::after {
-    /* Bir etiketin Attribute'unu attr ile yazdırmaya yarar. (burda title yazdırdık.) */
+    /* Bir etiketin Attribute'unu attr ile yazdırmaya yarar. (burda title değerini yazdırdık.) */
     content: attr(title);
     background: yellow;
 }
@@ -171,13 +171,13 @@ p::selection {
 /* --------------------------------------------- */
 
 .userName {
-    /* placeholer sonrası yazılanları etkiler.*/
+    /* Input'un içine kullanıcının yazdığı yazıları etkiler.*/
     color: blue;
     background: black;
 }
 
 .userName::placeholder {
-    /* placeholder'ı etkiler*/
+    /* placeholder'a yazılan metni veya kutuyu etkiler*/
     color: red;
     background-color: yellow;
     font-size: 25px;

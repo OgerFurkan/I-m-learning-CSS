@@ -1,0 +1,301 @@
+h1 {
+    background-color: tomato;
+    font-size: 40px;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/*background-image----------------------------------------------------------------------*/
+
+body {
+    /* 
+        url içerisine kaynak bırakarak background'a görsel ekleyebiliriz.
+        Transparent ve normal görseller olabilir.
+    */
+    background-image: url(/source/picture/effect.png), url(/source/picture/bg.png);
+}
+
+/*background-repeat----------------------------------------------------------------------*/
+
+.no-repeat {
+    border: 5px black solid;
+    width: 40%;
+    height: 40%;
+    background-image: url(/source/picture/css.png);
+    background-repeat: no-repeat;
+    /* Tekrarsız bir biçimde görseli ekler.*/
+}
+
+.repeat-xy {
+    border: 5px red solid;
+    width: 100%;
+    height: 40%;
+    background-image: url(/source/picture/css.png);
+    background-repeat: repeat-x;
+    /*Yatay (X) eksende tekrar eder ve repeat-y de kullanılanilir dikey (Y) eksende tekrar ettirmek için.*/
+}
+
+.space {
+    border: 5px blue solid;
+    width: 100%;
+    height: 75%;
+    background-image: url(/source/picture/css.png);
+    background-repeat: space;
+
+    /* Dikey-yatay ve sağ-sol'a yapışık bir biçimde görseli bozmadan boşluklarla
+    mevcut ekrana sığdırabildiği kadar sığdırır.*/
+
+    /*"round" da görseli bozarak sığdırabildiği kadar sığdırır.*/
+}
+
+/*background-position----------------------------------------------------------------------*/
+
+.background-position {
+    border: 5px black solid;
+    width: 75%;
+    height: 75%;
+    background-repeat: no-repeat;
+    background-image: url(/source/picture/css.png);
+
+    background-position: top;
+    /* En üst ortaya hizlar görseli.*/
+}
+
+.background-position1 {
+    border: 5px black solid;
+    width: 75%;
+    height: 75%;
+    background-repeat: no-repeat;
+    background-image: url(/source/picture/css.png);
+
+    background-position: bottom left;
+    /* En alt-sol köşeye hizlar görseli.*/
+}
+
+.background-position2 {
+    border: 5px black solid;
+    width: 75%;
+    height: 75%;
+    background-repeat: no-repeat;
+    background-image: url(/source/picture/css.png);
+
+    background-position: bottom 150px right 50px;
+    /*Alt-Sağ köşede, alttan 150px ve sağdan 50px boşluk bırakır.*/
+
+    /* %'li olarak da değer atanabilir.*/
+}
+
+/*background-clip----------------------------------------------------------------------*/
+
+.clip {
+    font: 900 100px 'Impact';
+    letter-spacing: 3px;
+    text-align: center;
+    border: 20px black solid;
+    padding: 50px;
+    background-image: url(/source/picture/rainbow.png);
+    color: transparent;
+
+    -webkit-background-clip: text;
+    /* deneysel olduğu için. */
+
+
+    /* 
+    1) background-clip: border-box;  -> Çerçeveye kadar doldurur.
+    2) background-clip: content-box; -> içerik boyutunca doldurur.
+    3) background-clip: padding-box; -> padding'e kadar doldurur.
+    */
+}
+
+/*background-origin----------------------------------------------------------------------*/
+
+.origin {
+    border: 25px black dashed;
+    width: 40%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-image: url(/source/picture/rainbow.png);
+    padding: 100px;
+
+    background-origin: content-box;
+    /*
+    Görselin başlangıcının nereden başlayacağını belirler.
+    padding - content - border gibi.
+    */
+}
+
+/*background-size----------------------------------------------------------------------*/
+
+.size {
+    width: 40;
+    height: 40%;
+    padding: 50px;
+    border: dotted red 10px;
+    background-image: url(/source/picture/poster.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    background-size: cover;
+    /*
+    1) contain: Tam oturt yüksekliği.
+    2) cover: Sığdır.
+    3) Apx Bpx: verilen değere göre boyutlanır.
+    */
+
+    background-origin: border-box;
+    /*
+    cover yaptık ve top-bottom border'ın üstüne gelirken
+    right-left border'ın üstüne gelmedi. Bu yüzden origin kullandık.
+    */
+
+}
+
+/*background-attachment----------------------------------------------------------------------*/
+
+.attachment {
+    width: 100%;
+    height: inherit;
+    background-image: url(/source/picture/poster.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+    /*scroll yapılsa bile sabit kalır.*/
+}
+
+/*background:----------------------------------------------------------------------*/
+
+.background {
+    width: 70%;
+    height: 70%;
+    border: 10px black dashed;
+    padding: 50px;
+    /*
+        -> background-image: url;
+        -> background-repeat: no-repeat;
+        -> background-color: red;
+        -> background-clip: content-box;
+        -> background-position: bottom;
+        -> background-size: 100px;
+        -> background-origin: padding-box;
+    */
+    background: no-repeat red bottom/100px padding-box url(/source/picture/css.png) content-box;
+}
+
+/*Gradient:----------------------------------------------------------------------*/
+
+.linear {
+    width: 300px;
+    height: 300px;
+
+    background: linear-gradient(124deg, black, red);
+
+    /* Doğrusal bir geçis sağlar, 124 derece açıyla.*/
+
+    /* to left, to bottom, to top, to bottom left, ... gibi*/
+}
+
+.linear1 {
+    width: 300px;
+    height: 300px;
+
+    background: linear-gradient(to top left, red 0 20%, black 25% 55%, blue 66%);
+
+    /* % kaçta başlayıp kaçta biteceğini belirleyebiliriz.*/
+}
+
+.linear2 {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+
+    background-image: linear-gradient(to right, transparent, red), linear-gradient(to left, transparent, black), url(/source/picture/css.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    /* transparan görseller veya renk kullanarak görseller üzerine bir renk geçişi sağlayabiliriz.*/
+}
+
+.radial {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+
+    background: radial-gradient(at center, red, black);
+
+    /* Belirli bir noktadan dairesel dağılmalar ile renk geçişi sağlamak için radial kullanırız.*/
+
+    /* at left, to bottom, at top, at center, ... gibi*/
+
+
+}
+
+.linear3 {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+
+    background: repeating-linear-gradient(120deg, red 0 50px, black 50px 100px);
+
+    border-radius: 50%;
+
+    /* Pattern'ni tekrarlayarak bir döngüsel desen, renk geçişi oluşturabiliriz.*/
+}
+
+.conic {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+
+    background: conic-gradient(from 225deg, lime, blue);
+
+    /* Merkezden dışa doğru döner bir düzenleme ile dağıtılmasını sağlar conic.*/
+}
+
+.conic1 {
+
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 50%;
+
+    background: conic-gradient(green 0deg 216deg, red 216deg 270deg, blue 270deg);
+
+    /*Sector diagram (Pasta dilimi şema) oluşturabiliriz.*/
+}
+
+.conic2 {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 50%;
+
+    background: repeating-conic-gradient(green 0deg 30deg, red 30deg 60deg, blue 60deg 120deg);
+
+    /* Pattern'ni tekrarlayarak bir döngüsel desen, renk geçişi oluşturabiliriz.*/
+}
+
+.asset {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 50%;
+
+    background:
+linear-gradient(135deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#708090;
+background-size: 64px 128px;
+
+    /* Hazır pattern'ler kullanabiliriz.*/
+}

@@ -32,9 +32,8 @@ body {
 
 div[name="W-H-Example"] {
     min-width: 100px;
-    /* Max ve min yükseklik, genişliklik ayarı yapılır.*/
     max-width: 150px;
-
+/* Max ve min yükseklik, genişliklik ayarı yapılır. Pencerye göre boyutlanmayı sağlar.*/
     min-height: 100px;
     max-height: 150px;
 
@@ -69,11 +68,11 @@ div[name="W-H-Example"] {
     /* Yani 100x100 iken üst-alt:80px ve sağ-sol: 60px etki eder yeni boyut: 160x180 olur. */
 
     /*
-    "padding: Apx" bu şekilde verilirse her taraftan Apx oluşur.
+        "padding: Apx;" bu şekilde verilirse her taraftan Apx oluşur.
 
-    "padding: Apx Bpx" şeklinde Üst-Alt: Apx, Sağ-Sol: Bpx oluşur.
+        "padding: Apx Bpx;" şeklinde Üst-Alt: Apx, Sağ-Sol: Bpx oluşur.
 
-    "padding: Apx Bpx Cpx" şeklinde Üst: Apx, Sağ-Sol: Bpx, Alt: Cpx oluşur.
+        "padding: Apx Bpx Cpx;" şeklinde Üst: Apx, Sağ-Sol: Bpx, Alt: Cpx oluşur.
      */
 }
 
@@ -106,7 +105,7 @@ div[name="W-H-Example"] {
     "margin: Apx Bpx" şeklinde Üst-Alt: Apx, Sağ-Sol: Bpx oluşur.
 
     "margin: Apx Bpx Cpx" şeklinde Üst: Apx, Sağ-Sol: Bpx, Alt: Cpx oluşur.
-     */
+*/
 
 .marginDiv {
     padding: 50px;
@@ -128,7 +127,7 @@ div[name="W-H-Example"] {
 
     margin-left: -200px;
     margin-top: -200px;
-    /*Sol ve sağa çekebiliriz "-" değer ile.*/
+    /*Sol veya sağa çekebiliriz "-" değer ile.*/
 }
 
 .marginAuto {
@@ -161,7 +160,7 @@ div[name="W-H-Example"] {
     */
 
     /*
-    Bunlar da ayrı yazılabilir border-style: solid(üst) dashed(sağ) dotted(alt) solid(sol) gibi
+    Bunlar da ayrı yazılabilir border-style: solid(üst için) dashed(sağ için) dotted(alt için) solid(sol için) gibi
     */
 
     /*
@@ -169,14 +168,16 @@ div[name="W-H-Example"] {
     */
 }
 
-.borderInput:focus {
+.borderInput:focus { /*Input çerçevesinin focus anı için*/
 
     border-color: green;
-    /* border-color: transparent; (gözükmez).
-       border-left: none; O kenarı kaldırır.*/
+    /*
+     border-color: transparent; (gözükmez).
+     border-left: none; O kenarı kaldırır.
+    */
 }
 
-.borderInput {
+.borderInput { /*Input çerçevesi için.*/
     outline: none;
     border: 3px dotted red
 }
