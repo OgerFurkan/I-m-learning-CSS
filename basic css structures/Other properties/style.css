@@ -1,0 +1,282 @@
+body h1 {
+    display: inline-block;
+
+    background-image: linear-gradient(to bottom, transparent, white), linear-gradient(to top, transparent, rgb(109, 105, 105));
+    background-clip: text;
+    color: transparent;
+    border: 3px dashed transparent;
+    border-left: none;
+    border-right: none;
+    border-image: url(https://i.ytimg.com/vi/JlxmKsGWZho/maxresdefault.jpg) 1 stretch;
+    padding: 10px;
+    margin: 0;
+
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+div {
+    color: rgb(172, 168, 168);
+    font-size: 32px;
+
+}
+
+article {
+    margin: 10px;
+    padding: 10px;
+    color: rgb(172, 168, 168);
+    font-size: 32px;
+    border: 3px solid rgb(172, 168, 168);
+}
+
+
+ol,
+ul {
+    margin: 10px;
+    margin-left: 32px;
+    padding: 10px;
+    color: rgb(172, 168, 168);
+    font-size: 32px;
+}
+
+html,
+body {
+    background-image: url(https://images.unsplash.com/photo-1637142375182-2c378fcbe061?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/*list:----------------------------------------------------------------------*/
+
+.OList {
+    list-style-type: upper-roman;
+
+    /* Liste tipini ayarlar.
+    -> decimal, upper-roman, lower-roman veya ul için square, circle gibi değerler alır.
+    -> 'x' hepsine x yazar.
+    -> none ise kaldırır.
+    -> unicode ile icon eklenebilir.
+    */
+
+    list-style-position: inside;
+
+    /*
+    Listenin içerde mi dışarda mı olacağını belirler.
+    (içeriklere göre.)
+    */
+
+    /*
+    list-style-image:url(y); ile de icon koyulabilir.
+    */
+
+    /*
+    list-style: circle outside url(); genel kullanım.
+    (url çalışmazsa circle olur.)
+    */
+}
+
+ol.sayac {
+    list-style: none;
+    counter-reset: sayac1 2;
+    /*Bir sayac oluşturup kaçtan başlayacağını belirliyoruz.*/
+}
+
+ol.sayac li {
+    counter-increment: sayac1 2;
+    /* Oluşan sayacın hangi etiket sayısına göre kaçar kaçar artacağını belirliyoruz.*/
+}
+
+ol.sayac li::before {
+    content: counter(sayac1) ". ";
+
+    /* Verdiğimiz etiketin öncesine bu sayacı yazdırıyoruz.*/
+}
+
+
+div.articles {
+    counter-reset: articleCounter;
+}
+
+div.articles article.Makale {
+    counter-increment: articleCounter;
+}
+
+div.articles article.Makale h4::before {
+    content: counter(articleCounter) ". ";
+}
+
+
+ol {
+    /* Alt sekmeleri sıralama için counters kullnadık.*/
+    list-style-type: none;
+    list-style-position: inside;
+    counter-reset: altListe;
+}
+
+ol li {
+    counter-increment: altListe;
+}
+
+ol li::before {
+    content: counters(altListe, ".") ". ";
+}
+
+/*display:----------------------------------------------------------------------*/
+
+
+.display {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+
+    display: inline-block;
+
+    /*
+            Burada görünümünü değişiyoruz.
+
+    -> Block: block element.
+    -> Inline: inline element.
+    -> Inline-block: block özelliklerini tutan ancak inline davranan element.
+    -> None: görünmeyen ve yer teşkil etmeyen eleman.
+    */
+}
+
+div.invisible {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+
+    display: block;
+
+    visibility: hidden;
+    /* Görünmez olur ancak yer teşkil eder.*/
+}
+
+/*position:----------------------------------------------------------------------*/
+
+
+/*
+    position: Sayfa üzerindeki konumunu belirlemek için kullanılır.
+
+        -> static: Varsayılan değer; öğe sayfa akışına göre yerleştirilir.
+        -> absolute: En yakın konumlandırılmış üst öğeye (veya sayfanın başlangıcına) göre mutlak pozisyonlandırma yapar.
+        -> relative:  Öğenin normal konumuna göre göreli bir pozisyonda yerleştirilmesini sağlar ve iç ögeleri hapseder.
+        -> fixed: Tarayıcı penceresine göre sabit bir pozisyon alır; kaydırıldığında bile sabit kalır.
+        -> sticky: Belirli bir kaydırma konumuna kadar normal yerleşimde kalır, ardından sabitlenir.
+    
+    z-index: Katman sırası belirler 1-99 değerleri ile.
+*/
+
+.cont {
+    width: 400px;
+    height: 400px;
+    background-color: #ccc;
+    position: relative;
+
+    /* İçindeki elemanları (fixed hariç) bu div'in içine hapsettik.*/
+}
+
+.cont div {
+    width: 25%;
+    height: 25%;
+
+}
+
+.cont div:first-child {
+    background-color: lime;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.cont div:nth-child(2) {
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    z-index: 2;
+    top: 50px;
+
+}
+
+.cont div:last-child {
+    background-color: blue;
+    position: absolute;
+    z-index: 3;
+    top: 90px;
+}
+
+
+
+div.paragraf h5 {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    color: black;
+
+    position: sticky;
+    /* Burada bu div içindeki tüm h5 lerin sticky olmasını sağladık.*/
+    top: 0;
+}
+
+div.text {
+    height: 150px;
+}
+
+div.checkbox {
+ 
+    border-radius: 40px;
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    position: relative;
+    transition: 500ms background-color;
+
+}
+
+
+label input:checked+.checkbox {
+    background-color: tomato;
+}
+
+
+div.checkbox .button {
+    background-color: tomato;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    transition: 500ms left, 500ms background-color;
+}
+
+label input {
+    display: none;
+}
+
+label input:checked+.checkbox .button {
+    left: 65px;
+    background-color: white;
+}
+
+label input:not(:checked) + .checkbox .button + .onay::after {
+    position: relative;
+    left: 105px;
+    content: "Unchecked";
+    color: white;
+    transition: 500ms color;
+}
+
+label input:checked + .checkbox .button + .onay::after {
+    position: relative;
+    left: 105px;
+    content: "Checked";
+    color: tomato;
+    transition: 500ms color;
+}
+
+
+/* Burada bir checkbox örneği yaptım.*/

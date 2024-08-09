@@ -66,7 +66,7 @@ body {
     background-image: url(/source/picture/css.png);
 
     background-position: top;
-    /* En üst ortaya hizlar görseli.*/
+    /* En üst ortaya hizalar görseli.*/
 }
 
 .background-position1 {
@@ -104,14 +104,13 @@ body {
     background-image: url(/source/picture/rainbow.png);
     color: transparent;
 
-    -webkit-background-clip: text;
-    /* deneysel olduğu için. */
-
+    background-clip: text;
 
     /* 
     1) background-clip: border-box;  -> Çerçeveye kadar doldurur.
     2) background-clip: content-box; -> içerik boyutunca doldurur.
     3) background-clip: padding-box; -> padding'e kadar doldurur.
+    4) background-clip: text; ->  Metin boyutunca doldurur
     */
 }
 
@@ -146,8 +145,8 @@ body {
 
     background-size: cover;
     /*
-    1) contain: Tam oturt yüksekliği.
-    2) cover: Sığdır.
+    1) contain: Yüksekliğini tam oturtur.
+    2) cover: Çerçeveye sığdırır.
     3) Apx Bpx: verilen değere göre boyutlanır.
     */
 
@@ -235,7 +234,7 @@ body {
 
     /* Belirli bir noktadan dairesel dağılmalar ile renk geçişi sağlamak için radial kullanırız.*/
 
-    /* at left, to bottom, at top, at center, ... gibi*/
+    /* at left, at bottom, at top, at center, ... gibi*/
 
 
 }
