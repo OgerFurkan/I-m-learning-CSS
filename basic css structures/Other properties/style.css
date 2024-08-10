@@ -226,7 +226,7 @@ div.text {
 }
 
 div.checkbox {
- 
+
     border-radius: 40px;
     width: 100px;
     height: 40px;
@@ -262,7 +262,7 @@ label input:checked+.checkbox .button {
     background-color: white;
 }
 
-label input:not(:checked) + .checkbox .button + .onay::after {
+label input:not(:checked)+.checkbox .button+.onay::after {
     position: relative;
     left: 105px;
     content: "Unchecked";
@@ -270,7 +270,7 @@ label input:not(:checked) + .checkbox .button + .onay::after {
     transition: 500ms color;
 }
 
-label input:checked + .checkbox .button + .onay::after {
+label input:checked+.checkbox .button+.onay::after {
     position: relative;
     left: 105px;
     content: "Checked";
@@ -280,3 +280,138 @@ label input:checked + .checkbox .button + .onay::after {
 
 
 /* Burada bir checkbox örneği yaptım.*/
+
+/*transition:----------------------------------------------------------------------*/
+
+/* 
+    Genel etikete koyarsak bütün işlemlerde geçerli ancak örn:hover etiketiyle ilişik
+bir şekilde yazarsak sadece hover etkin olduğunda etkili olur.
+*/
+
+div.transition {
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+    word-break: break-all;
+    transition-property: background-color;
+    /* Hangi değere transition etki edecek belirler.*/
+    /*
+    transition-property: all; -> Bütün özelliklere etki eder.
+    */
+    transition-duration: 500ms;
+    /* Bu transition'ın ne kadar sürede olacağını belirler.*/
+
+    transition-delay: 500ms;
+    /* Ne kadar süre sonra başlayacağını belirler.*/
+}
+
+div.transition:hover {
+    background-color: red;
+}
+
+
+
+div.transitionExample {
+    position: relative;
+    width: 15px;
+    height: 150px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    background-color: purple;
+    transition-property: width;
+    transition-duration: 2s;
+}
+
+div.transitionExample:hover {
+    width: 300px;
+    transition-timing-function: ease;
+
+    /* 
+        Bir transition'ın hızını zaman içinde nasıl değiştireceğinizi belirler. 
+    Örneğin, bir eleman hareket ederken hızının sabit mi, hızlanarak mı, yoksa yavaşlayarak mı
+    ilerleyeceğini tanımlamak için kullanılır.
+    */
+
+    /* 
+    ease: Yavaş başlar, hızlanır ve tekrar yavaşlar.
+    linear: Sabit bir hızla hareket eder.
+    ease-in: Yavaş başlayıp hızlanır.
+    ease-out: Hızlı başlar, sonra yavaşlar.
+    ease-in-out: Yavaş başlayıp hızlanır, sonra tekrar yavaşlar.
+    */
+}
+
+.container div {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    background-color: red;
+
+
+    transition-timing-function: cubic-bezier(0.3, .93, .6, -0.6);
+
+    /*
+    Özelleştirilmiş bir hız eğrisi oluşturmanızı sağlar.
+    Dört kontrol noktası (x1, y1, x2, y2) kullanarak geçiş hızını 
+    ayrıntılı olarak ayarlanabilir.
+
+    (Hazırları veya özelleştirebileceğimiz şekilleri internette mevcut.)
+    */
+    transition-property: width, background-color;
+    transition-duration: 1.2s, 1.2s;
+    
+}
+
+/* Burada Kendimce bir örnek yaptım.*/
+
+.container div:hover {
+    width: 300px;
+    background-color: black;
+}
+
+.container div:hover span::before {
+    content: "Merhaba";
+    position: absolute;
+    top: 50px;
+    right: 87.5px;
+    color: red;
+}
+
+.container div:not(:hover) span::before {
+    content: "Bak";
+    position: absolute;
+    top: 50px;
+    right: 87.5px;
+    color: black;
+}
+
+/*column:----------------------------------------------------------------------*/
+
+div.textColumn{
+    columns: 3 150px;
+    /* 
+    -> "3" Eğer sığıyorsa Metni 3 ayrı parça şeklinde yazdırmak için. (sadece 3 yazarsak sıkıştırıp 3 parça yapar.)
+    -> "150px" Her bir parçanın eni 150px olması için.
+    */
+
+    column-rule-style: groove;
+    column-rule-color: gray;
+    column-rule-width: 5px;
+
+    /*
+    Kolonlar arasına ayıraç koymak ve özelliklerini belirtmek için.
+    (Sadece column-rule: groove gray 5px; de yazılabilir.)
+    */
+
+    column-gap: 50px ;
+    /* Kolonlar arasına boşluk koymak için.*/
+}
+
+div.textColumn h2{
+    column-span: all;
+    /* Tüm kolonları kapsayan bir başlık olur.*/
+}
+
+/*@font-face kullanımı----------------------------------------------------------------------*/
+
