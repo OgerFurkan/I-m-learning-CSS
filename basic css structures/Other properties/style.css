@@ -414,4 +414,41 @@ div.textColumn h2{
 }
 
 /*@font-face kullanımı----------------------------------------------------------------------*/
+@font-face {
+    font-family: 'Break gothic';
+    src: local("Break gothic"), url(/source/fonts/Break\ gothic.ttf) format('truetype');
+
+    /* Burada indirdiğimiz font'u kaydettik. 
+    local: eğer kullanıcıda varsa diye.
+    url: indirmesi için.
+    */
+    font-display: swap ; /* Varsayılan neyse yüklenene kadar onu göstermeyi sağlar.*/
+}
+
+
+
+
+.font-face{
+    font-family: "Break gothic";
+    font-size: 100px;
+}
+
+
+/* Bu şekilde de generator kullanabiliriz. */
+@font-face {
+    font-family: 'Break Gothic';
+    src: url('BreakGothic-Regular.eot');
+    src: local('Break Gothic Regular'), local('BreakGothic-Regular'),
+        url('BreakGothic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BreakGothic-Regular.woff2') format('woff2'),
+        url('BreakGothic-Regular.woff') format('woff'),
+        url('BreakGothic-Regular.ttf') format('truetype'),
+        url('BreakGothic-Regular.svg#BreakGothic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Break Gothic';
+    src: url('BreakGothic-Regular.eot');
+    src: local('Break Gothic Regular'), local('BreakGothic-Regular'),
+        url('BreakGothic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BreakGothic-Regular.woff2') format('woff2'),
+        url('BreakGothic-Regular.woff') format('woff'),
+        url('BreakGothic-Regular.ttf') format('truetype'),
+        url('BreakGothic-Regular.svg#BreakGothic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
