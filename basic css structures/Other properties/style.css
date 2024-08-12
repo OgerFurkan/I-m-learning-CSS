@@ -414,27 +414,31 @@ div.textColumn h2{
 }
 
 /*@font-face kullanımı----------------------------------------------------------------------*/
+
 @font-face {
     font-family: 'Break gothic';
-    src: local("Break gothic"), url(/source/fonts/Break\ gothic.ttf) format('truetype');
+    src: local("Break gothic"),
+    url(/source/fonts/Break\ gothic.ttf) format('truetype'); /* Formatını belirttik. (ttf: Trutype format)*/
 
     /* Burada indirdiğimiz font'u kaydettik. 
-    local: eğer kullanıcıda varsa diye.
-    url: indirmesi için.
+    local: eğer kullanıcının cihazında halihazırda varsa bizim kaynağımızı indirmez.
+    url: Bizim dosyamızı indirmesi için gerekli url.
     */
-    font-display: swap ; /* Varsayılan neyse yüklenene kadar onu göstermeyi sağlar.*/
+    font-display: swap ; /* Varsayılan font ney ise yüklenene kadar veya yüklenmez ise onu göstermeyi sağlar.*/
 }
 
-
-
-
-.font-face{
+.font-face-Example{
     font-family: "Break gothic";
     font-size: 100px;
 }
 
 
-/* Bu şekilde de generator kullanabiliriz. */
+/* 
+Bu şekilde de generator kullanabiliriz. 
+woff2 en fazla kullanılan formattır.
+Ancak düşük tarayıcılardan girilme ihtimaline karşın bu şekilde 
+çeşit format yükleyebiliriz.
+*/
 @font-face {
     font-family: 'Break Gothic';
     src: url('BreakGothic-Regular.eot');
@@ -449,6 +453,61 @@ div.textColumn h2{
     font-display: swap;
 }
 
+/* Bu şekilde google fonts ile import ederek de kullanabiliriz.*/
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&display=swap');
 
+div.google-font-Example{
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+}
 
+/*Icon Font kullanımı----------------------------------------------------------------------*/
 
+@font-face {
+    font-family: 'icon-font';
+    src: url('/source/icon-font/font/icon-font.eot?50621059');
+    src: url('/source/icon-font/font/icon-font.eot?50621059#iefix') format('embedded-opentype'),
+         url('/source/icon-font/font/icon-font.woff2?50621059') format('woff2'),
+         url('/source/icon-font/font/icon-font.woff?50621059') format('woff'),
+         url('/source/icon-font/font/icon-font.ttf?50621059') format('truetype'),
+         url('/source/icon-font/font/icon-font.svg?50621059#icon-font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "icon-font";
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    display: inline-block;
+    text-decoration: inherit;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-like:before { content: '\e801'; } /* '' */
+  .icon-search:before { content: '\e802'; } /* '' */
+
+/* Buraya kadar olan kısım hazır alındı.*/
+/* Bunlar ise icon üzerindeki ayarlamalarımız.*/
+
+  .icon-like, .icon-search{
+    font-size: 150px;
+    color: white;
+  }
+  .icon-like:hover{
+    color: red;
+  }
+  .icon-search:hover{
+    color: blue;
+  }
+  
+  /* cdn ile de icon dosylaraını alabiliriz.*/
+  @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css";
+
+ 
