@@ -511,3 +511,32 @@ div.google-font-Example{
   @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css";
 
  
+/*filter:----------------------------------------------------------------------*/
+
+img.poster{
+    transition: 1s filter;
+    filter: blur(10px);
+    /* Bulanıklık filtresini 1 saniyelik transition ile ekler.*/
+
+    /*
+
+    -> blur(): Bir öğeyi bulanıklaştırır.
+    -> brightness(): Bir öğenin parlaklığını ayarlar.
+    -> contrast(): Bir öğenin kontrastını ayarlar.
+    -> grayscale(): Bir öğeyi gri tonlamaya çevirir.
+    -> sepia(): Bir öğeye sepya (eski fotoğraf) efekti ekler. 
+    -> saturate(): Bir öğenin renk doygunluğunu ayarlar. 
+    -> drop-shadow(): Bir öğeye gölge ekler. 
+    -> hue-rotate(): Bir öğenin renk tonunu döndürür. 
+    -> invert(): Bir öğenin renklerini ters çevirir.
+    -> opacity(): Bir öğenin opaklığını ayarlar.
+
+    gibi...
+    */
+    
+}
+
+img.poster:hover{
+    filter: blur(0);
+    /* Üzerine gelince blur'u kaldır.*/
+}
