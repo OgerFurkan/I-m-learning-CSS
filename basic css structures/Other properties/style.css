@@ -47,6 +47,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 /*list:----------------------------------------------------------------------*/
@@ -360,7 +361,7 @@ div.transitionExample:hover {
     */
     transition-property: width, background-color;
     transition-duration: 1.2s, 1.2s;
-    
+
 }
 
 /* Burada Kendimce bir örnek yaptım.*/
@@ -388,7 +389,7 @@ div.transitionExample:hover {
 
 /*column:----------------------------------------------------------------------*/
 
-div.textColumn{
+div.textColumn {
     columns: 3 150px;
     /* 
     -> "3" Eğer sığıyorsa Metni 3 ayrı parça şeklinde yazdırmak için. (sadece 3 yazarsak sıkıştırıp 3 parça yapar.)
@@ -404,11 +405,11 @@ div.textColumn{
     (Sadece column-rule: groove gray 5px; de yazılabilir.)
     */
 
-    column-gap: 50px ;
+    column-gap: 50px;
     /* Kolonlar arasına boşluk koymak için.*/
 }
 
-div.textColumn h2{
+div.textColumn h2 {
     column-span: all;
     /* Tüm kolonları kapsayan bir başlık olur.*/
 }
@@ -418,16 +419,18 @@ div.textColumn h2{
 @font-face {
     font-family: 'Break gothic';
     src: local("Break gothic"),
-    url(/source/fonts/Break\ gothic.ttf) format('truetype'); /* Formatını belirttik. (ttf: Trutype format)*/
+        url(/source/fonts/Break\ gothic.ttf) format('truetype');
+    /* Formatını belirttik. (ttf: Trutype format)*/
 
     /* Burada indirdiğimiz font'u kaydettik. 
     local: eğer kullanıcının cihazında halihazırda varsa bizim kaynağımızı indirmez.
     url: Bizim dosyamızı indirmesi için gerekli url.
     */
-    font-display: swap ; /* Varsayılan font ney ise yüklenene kadar veya yüklenmez ise onu göstermeyi sağlar.*/
+    font-display: swap;
+    /* Varsayılan font ney ise yüklenene kadar veya yüklenmez ise onu göstermeyi sağlar.*/
 }
 
-.font-face-Example{
+.font-face-Example {
     font-family: "Break gothic";
     font-size: 100px;
 }
@@ -456,7 +459,7 @@ Ancak düşük tarayıcılardan girilme ihtimaline karşın bu şekilde
 /* Bu şekilde google fonts ile import ederek de kullanabiliriz.*/
 @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&display=swap');
 
-div.google-font-Example{
+div.google-font-Example {
     font-family: "Grey Qo", cursive;
     font-weight: 400;
     font-style: normal;
@@ -469,15 +472,16 @@ div.google-font-Example{
     font-family: 'icon-font';
     src: url('/source/icon-font/font/icon-font.eot?50621059');
     src: url('/source/icon-font/font/icon-font.eot?50621059#iefix') format('embedded-opentype'),
-         url('/source/icon-font/font/icon-font.woff2?50621059') format('woff2'),
-         url('/source/icon-font/font/icon-font.woff?50621059') format('woff'),
-         url('/source/icon-font/font/icon-font.ttf?50621059') format('truetype'),
-         url('/source/icon-font/font/icon-font.svg?50621059#icon-font') format('svg');
+        url('/source/icon-font/font/icon-font.woff2?50621059') format('woff2'),
+        url('/source/icon-font/font/icon-font.woff?50621059') format('woff'),
+        url('/source/icon-font/font/icon-font.ttf?50621059') format('truetype'),
+        url('/source/icon-font/font/icon-font.svg?50621059#icon-font') format('svg');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
-  [class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
     font-family: "icon-font";
     font-style: normal;
     font-weight: normal;
@@ -488,35 +492,48 @@ div.google-font-Example{
     text-transform: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-like:before { content: '\e801'; } /* '' */
-  .icon-search:before { content: '\e802'; } /* '' */
+}
+
+.icon-like:before {
+    content: '\e801';
+}
+
+/* '' */
+.icon-search:before {
+    content: '\e802';
+}
+
+/* '' */
 
 /* Buraya kadar olan kısım hazır alındı.*/
 /* Bunlar ise icon üzerindeki ayarlamalarımız.*/
 
-  .icon-like, .icon-search{
+.icon-like,
+.icon-search {
     font-size: 150px;
     color: white;
-  }
-  .icon-like:hover{
-    color: red;
-  }
-  .icon-search:hover{
-    color: blue;
-  }
-  
-  /* cdn ile de icon dosylaraını alabiliriz.*/
-  @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css";
+}
 
- 
+.icon-like:hover {
+    color: red;
+}
+
+.icon-search:hover {
+    color: blue;
+}
+
+/* cdn ile de icon dosylaraını alabiliriz.*/
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css";
+
+
 /*filter:----------------------------------------------------------------------*/
 
-img.poster{
+img.poster {
+    width: 1000px;
     transition: 1s filter;
-    filter: blur(10px);
-    /* Bulanıklık filtresini 1 saniyelik transition ile ekler.*/
+    filter:
+        blur(10px) brightness(.2) contrast(1.1) grayscale(.5) hue-rotate(1deg) invert(0) opacity(.95) saturate(2.5) sepia(.5);
+
 
     /*
 
@@ -528,15 +545,291 @@ img.poster{
     -> saturate(): Bir öğenin renk doygunluğunu ayarlar. 
     -> drop-shadow(): Bir öğeye gölge ekler. 
     -> hue-rotate(): Bir öğenin renk tonunu döndürür. 
-    -> invert(): Bir öğenin renklerini ters çevirir.
+    -> invert(): Bir öğenin renklerini ters çevirir. (Dark Mode için kullanılabilir.)
     -> opacity(): Bir öğenin opaklığını ayarlar.
 
     gibi...
     */
-    
+
 }
 
-img.poster:hover{
+img.poster:hover {
     filter: blur(0);
     /* Üzerine gelince blur'u kaldır.*/
+}
+
+img.css {
+    margin: 50px;
+    width: 800px;
+
+    box-shadow: 0 0 50px 10px rgba(7, 33, 229, .5);
+    /* Kutu şeklinde bir gölgelendirme yapar. 1. Dikey 2. Yatay 3. Bulanıklık 4. Doygunluk 5. Renk*/
+
+}
+
+img.astronaut {
+    width: 800px;
+    transition: 500ms filter;
+    filter: blur(10px) drop-shadow(10px 0 30px blue);
+    /* Transparan görselin çerçevesince bir gölgelendirme yapar. 1. Dikey 2. Yatay 3. Bulanıklık 4 Renk*/
+
+}
+
+img.astronaut:hover {
+    filter: blur(0) drop-shadow(10px 0 30px red);
+}
+
+/*transform:----------------------------------------------------------------------*/
+
+/****** ROTATE ******/
+.transformX,
+.transform360 {
+    width: 500px;
+    height: 500px;
+    margin: 20px;
+    background-color: red;
+    transition: 500ms transform;
+    color: black;
+    text-align: center;
+}
+
+.rotateX+span::before {
+    content: "X Ekseninde";
+    font-size: 40px;
+    color: white;
+}
+
+.rotateX {
+    width: 50px;
+    height: 50px;
+}
+
+.rotateX:checked+span+.transformX {
+    transform: rotateX(180deg)
+        /* X ekseninde belirlenen derecede dönüş sağlar.*/
+}
+
+
+.rotate+span::before {
+    content: "Ekseninde";
+    font-size: 40px;
+    color: white;
+}
+
+.rotate {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.rotate:checked+span+.transform360 {
+    transform: rotate(360deg)
+        /* Saat yönünde kendi ekseninde dönüş sağlar.*/
+}
+
+/* Burada da arkasını ve önünü üzerine gelince dönerek gösteren rotate transformu örneği yaptım. */
+
+.box-transform {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.box-transform .front,
+.box-transform .back {
+    width: inherit;
+    height: inherit;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: 500ms transform;
+}
+
+.box-transform .front {
+    background-color: blue;
+}
+
+.box-transform .back {
+    background-color: white;
+    color: black;
+    transform: rotateX(-180deg);
+}
+
+.box-transform:hover .front {
+    transform: rotateX(-180deg);
+}
+
+.box-transform:hover .back {
+    transform: rotateY(0);
+}
+
+/****** SKEW ******/
+
+div.skew-box {
+    width: 300px;
+    height: 300px;
+    background-color: brown;
+    margin: 25px;
+    transition: 500ms transform;
+}
+
+div.skew-box:hover {
+    transform: skew(30deg);
+    /* X ve Y eksenleri boyunca eğme işlemi yapılabilir.*/
+}
+
+/* Burada da bir design yaptık skew ile.*/
+
+a.skew {
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    width: 300px;
+    text-decoration: none;
+    color: red;
+    background-color: #f0f0f0;
+    border: 5px double blue;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+
+}
+
+a.skew::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -200%;
+    background-color: blue;
+    transition: 500ms left;
+    z-index: -1;
+    transform: skewX(-30deg);
+}
+
+a.skew:hover::before {
+    left: -35%;
+
+}
+
+/****** SCALE ******/
+
+/* Boyutlarını belirli bir faktörle orantılı olarak büyütmek veya küçültmek için kullanırız.*/
+
+.scale-box1 {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    margin-left: 50px;
+    margin-top: 50px;
+    transition: 200ms transform;
+    text-align: center;
+}
+
+.scale-box2 {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    margin-left: 50px;
+    margin-top: 50px;
+    transition: 200ms transform;
+    text-align: center;
+}
+
+.scale-box1:hover,
+.scale-box2:hover {
+    transform: scale(1.2);
+}
+
+.scale-box3 {
+    width: 300px;
+    height: 300px;
+    background-color: green;
+    margin-left: 50px;
+    margin-top: 50px;
+    transition: 200ms transform, 200ms border-radius;
+    text-align: center;
+}
+
+.scale-box3:hover {
+    transform: scale(.5);
+    border-radius: 50%;
+}
+
+/****** TRANSLATE ******/
+
+/* X ve Y eksenlerinde belirli bir mesafede hareket ettirmek için kullanılır. */
+
+/* Normalde sadece position ile de yapılabilir ancak mobilde kasmalara yol açıyor.*/
+.menu-btn {
+    display: inline-block;
+    width: 250px;
+    height: 80px;
+    background-color: rgb(44, 44, 44);
+    text-align: center;
+    font-size: 50px;
+    padding-top: 20px;
+    border: 2px solid red;
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#checkbox {
+    display: none;
+}
+
+.menu-bar {
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(50, 51, 51);
+
+    top: 0;
+    line-height: 50px;
+    font-weight: 900;
+
+    transform: translateX(-100%);
+    /* Burada menümüzü x ekseninin en soluna attık.*/
+
+    transition: 300ms transform;
+    border: groove white 2px;
+    border-left: none;
+    perspective: 800px;
+    z-index: 2;
+}
+
+.menu-bar ul li a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+
+#checkbox:checked+.menu-bar {
+
+    transform: translateX(0);
+    /* Burada da menümüzü x ekseninde ilk konumuna getirdik.*/
+
+}
+
+/****** ORIGIN ******/
+
+.origin {
+    width: 300px;
+    height: 300px;
+    background-color: beige;
+    transition: 1s transform;
+    margin: 50px;
+    border: solid red 2px;
+}
+
+.origin:hover {
+    transform: rotate(40deg);
+    transform-origin: bottom right;
 }
