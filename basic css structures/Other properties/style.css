@@ -833,3 +833,97 @@ a.skew:hover::before {
     transform: rotate(40deg);
     transform-origin: bottom right;
 }
+
+/*user-select:----------------------------------------------------------------------*/
+
+.user-select {
+    user-select: all;
+    /* Burada içeriğimizi seçilemez kıldık.*/
+    /*
+    none: Seçilemez kılar.
+    auto: Tarayıcı veya işletim sistemine göre ayarlar.
+    all: Tek tıkla bütün içeriği seçilebilir kılar.
+    text: Metnin seçilebilir olmasını sağlar.
+    */
+}
+
+/*appearance ve ::file-selector-button Özelliği // calc() fonksiyonu----------------------------------------------------------------------*/
+
+/* Varsayılan dış görünüşünde müdehale edemeyeceğimiz şeyleri iptal eder. :none*/
+
+#appearance-example-select {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    font-size: 35px;
+    border-color: red;
+    border-radius: 10%;
+    outline-color: green;
+
+
+    appearance: none;
+    /* Üzerindeki aşağı oku kaldırdık.*/
+    background: url(/source/icon/drop-down.svg) no-repeat right;
+    /* Burada da kendimiz aşağı ok koyduk.*/
+
+    background-color: white;
+    padding-left: 10px;
+
+}
+
+.appearance-example-radio {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    appearance: none;
+    /* Tamamen yuvarlak kısmını kaybettik.*/
+
+    background-color: white;
+    border-radius: 50%;
+    border: double 25px #999;
+    cursor: pointer;
+    /* Kendimiz bir radio dış görünüşü oluşturduk.*/
+}
+
+.appearance-example-radio::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 15px);
+    /* calc() fonksiyonu, farklı birimlerdeki değerleri birleştirerek dinamik hesaplamalar yapmanızı sağlar. */
+    height: calc(100% - 15px);
+    background-color: green;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: 500ms all;
+    /* Checked olduğunda gözükecek görünüşü tasarladım.*/
+
+}
+
+.appearance-example-radio:checked::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    border-color: green;
+    /* Checked olduğunda gözükecek görünüşü göstermeyi ayarladık.*/
+}
+.appearance-example-radio:checked{
+    border-color: green;
+}
+.appearance-example-radio:focus{
+    border-color: black;
+}
+
+.appearance-example-file::file-selector-button{
+    
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-color: red;
+    border: double white 15px;
+    
+    /* ::file-selector-button = dosya seçme çubuğunu düzenlemeye yardımcı olur.*/
+}
