@@ -48,6 +48,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    height: 100%;
 }
 
 /*list:----------------------------------------------------------------------*/
@@ -926,4 +927,64 @@ a.skew:hover::before {
     border: double white 15px;
     
     /* ::file-selector-button = dosya seçme çubuğunu düzenlemeye yardımcı olur.*/
+}
+
+/*overflow ve scrollbar----------------------------------------------------------------------*/
+
+
+/*
+overflow-
+    visible (def): Taşan kısmı göstermeye devam eder.
+    hidden: Taşan kısmı gizler.
+    scroll: Taşan eleman olsun olmasın scrollbar'ı gösterir.
+    auto: Taşan eleman varsa scrollbar gösterir, yok ise göstermez.
+
+overflow-x : x eksenindeki scrollbar'a etki eder.
+overflow-y : y eksenindeki scrollbar'a etki eder.
+
+ CHROME, EDGE, OPERA ve SAFARI'de çalışan scrollbar designer kodları:
+  
+    ::-webkit-scrollbar
+    ::-webkit-scrollbar-corner
+    ::-webkit-scrollbar-thumb
+
+ FIREFOX'da çalışan crollbar designer kodları:
+
+    scrollbarr-width: none, auto, thin
+    scrollbar-color: [thumb, scrollbar]
+
+    ( Anmiasyon eklenemiyor.)
+
+*/
+
+.overflow-scrollbar-example{
+    width: 50px;
+    height: 50px;
+    padding: 25px;
+
+   
+    
+    overflow: auto; /*Taşan içeriğimiz varsa scrollbar gösterir, yok ise göstermez.*/
+}
+
+.overflow-scrollbar-example::-webkit-scrollbar{ /* Scrollbar'ı design eder. */
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    border: double green 2px;
+}
+
+.overflow-scrollbar-example::-webkit-scrollbar-corner{ /* 2 scrollbar'ın kesişimini design eder. */
+    background-color: blue;
+}
+
+.overflow-scrollbar-example::-webkit-scrollbar-thumb{ /* Scrollbar'ın iç kısmındaki bar'ı design eder. */
+    border-radius: 15px;
+    background-color: white;
+}
+
+.overflow-scrollbar-example:hover::-webkit-scrollbar{ /* Diğer özelliklerle combine edilebilir.*/
+    background-color: yellow;
+
 }
