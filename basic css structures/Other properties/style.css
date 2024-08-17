@@ -988,3 +988,57 @@ overflow-y : y eksenindeki scrollbar'a etki eder.
     background-color: yellow;
 
 }
+
+/*scroll-behavior, scroll-margin----------------------------------------------------------------------*/
+
+/* scroll-behavior:  CSS özelliği, bir sayfada ya da bir elemanda gerçekleşen kaydırma işleminin nasıl gerçekleşeceğini kontrol eder.*/
+
+/*
+auto: Bu varsayılan değerdir. Kaydırma işlemi anında gerçekleşir, yani herhangi bir animasyon olmadan kaydırılır.
+
+smooth: Kaydırma işlemi pürüzsüz bir şekilde, yani yumuşak bir animasyonla gerçekleştirilir.
+*/
+
+html {
+    scroll-behavior: smooth;
+
+    /* Belgedeki tüm kaydırma işlemleri yumuşak bir şekilde gerçekleşir.*/
+
+  }
+
+  /*scroll-margin: Bir öğe kaydırıldığında, öğenin kenarları ile kaydırma konteyneri arasındaki boşluğu ayarlamak için kullanılan bir CSS özelliğidir. */
+
+  nav{
+    background-color: blue;
+
+    position: fixed;
+    top: 0;
+
+  }
+  nav a{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 100px;
+    padding: 0 50px;
+    color: red;
+  }
+
+
+  section{
+    height: calc(100vh - 100px);
+
+    scroll-margin-top: 100px; /* Section etiketlerinin tümünde kaydırılma yapıldığında üstten 100px boşluk bırakır.*/
+  }
+
+  #home{
+    background-color: white;
+  }
+  #about{
+    background-color: gold;
+  }
+  #blog{
+    background-color: aqua;
+  }
+  #contact{
+    background-color: red;
+  }
