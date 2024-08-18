@@ -349,6 +349,7 @@ div.transitionExample:hover {
     margin-bottom: 15px;
     margin-top: 15px;
     background-color: red;
+    position: relative;
 
 
     transition-timing-function: cubic-bezier(0.3, .93, .6, -0.6);
@@ -911,21 +912,23 @@ a.skew:hover::before {
     border-color: green;
     /* Checked olduğunda gözükecek görünüşü göstermeyi ayarladık.*/
 }
-.appearance-example-radio:checked{
+
+.appearance-example-radio:checked {
     border-color: green;
 }
-.appearance-example-radio:focus{
+
+.appearance-example-radio:focus {
     border-color: black;
 }
 
-.appearance-example-file::file-selector-button{
-    
+.appearance-example-file::file-selector-button {
+
     width: 300px;
     height: 300px;
     position: relative;
     background-color: red;
     border: double white 15px;
-    
+
     /* ::file-selector-button = dosya seçme çubuğunu düzenlemeye yardımcı olur.*/
 }
 
@@ -957,17 +960,19 @@ overflow-y : y eksenindeki scrollbar'a etki eder.
 
 */
 
-.overflow-scrollbar-example{
+.overflow-scrollbar-example {
     width: 50px;
     height: 50px;
     padding: 25px;
 
-   
-    
-    overflow: auto; /*Taşan içeriğimiz varsa scrollbar gösterir, yok ise göstermez.*/
+
+
+    overflow: auto;
+    /*Taşan içeriğimiz varsa scrollbar gösterir, yok ise göstermez.*/
 }
 
-.overflow-scrollbar-example::-webkit-scrollbar{ /* Scrollbar'ı design eder. */
+.overflow-scrollbar-example::-webkit-scrollbar {
+    /* Scrollbar'ı design eder. */
     background-color: red;
     width: 10px;
     height: 10px;
@@ -975,16 +980,19 @@ overflow-y : y eksenindeki scrollbar'a etki eder.
     border: double green 2px;
 }
 
-.overflow-scrollbar-example::-webkit-scrollbar-corner{ /* 2 scrollbar'ın kesişimini design eder. */
+.overflow-scrollbar-example::-webkit-scrollbar-corner {
+    /* 2 scrollbar'ın kesişimini design eder. */
     background-color: blue;
 }
 
-.overflow-scrollbar-example::-webkit-scrollbar-thumb{ /* Scrollbar'ın iç kısmındaki bar'ı design eder. */
+.overflow-scrollbar-example::-webkit-scrollbar-thumb {
+    /* Scrollbar'ın iç kısmındaki bar'ı design eder. */
     border-radius: 15px;
     background-color: white;
 }
 
-.overflow-scrollbar-example:hover::-webkit-scrollbar{ /* Diğer özelliklerle combine edilebilir.*/
+.overflow-scrollbar-example:hover::-webkit-scrollbar {
+    /* Diğer özelliklerle combine edilebilir.*/
     background-color: yellow;
 
 }
@@ -1004,41 +1012,83 @@ html {
 
     /* Belgedeki tüm kaydırma işlemleri yumuşak bir şekilde gerçekleşir.*/
 
-  }
+}
 
-  /*scroll-margin: Bir öğe kaydırıldığında, öğenin kenarları ile kaydırma konteyneri arasındaki boşluğu ayarlamak için kullanılan bir CSS özelliğidir. */
+/*scroll-margin: Bir öğe kaydırıldığında, öğenin kenarları ile kaydırma konteyneri arasındaki boşluğu ayarlamak için kullanılan bir CSS özelliğidir. */
 
-  nav{
-    background-color: blue;
 
-    position: fixed;
-    top: 0;
-
-  }
-  nav a{
+nav.scroll-behavior a {
     text-decoration: none;
     display: inline-block;
-    line-height: 100px;
-    padding: 0 50px;
-    color: red;
-  }
+    line-height: 50px;
+    padding: 0 20px;
+    color: white;
+}
 
-
-  section{
-    height: calc(100vh - 100px);
-
-    scroll-margin-top: 100px; /* Section etiketlerinin tümünde kaydırılma yapıldığında üstten 100px boşluk bırakır.*/
-  }
-
-  #home{
-    background-color: white;
-  }
-  #about{
-    background-color: gold;
-  }
-  #blog{
-    background-color: aqua;
-  }
-  #contact{
+nav.scroll-behavior {
     background-color: red;
-  }
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+section {
+    height: calc(100vh - 50px);
+
+
+    scroll-margin-top: 48px;
+    /* Section etiketlerinin tümünde kaydırılma yapıldığında üstten 100px boşluk bırakır.*/
+    /* Aslında 50px olması lazım ancak benim tarayıcımda 50px'de 2px bozulma oluyor.*/
+}
+
+#home {
+    background-color: white;
+}
+
+#about {
+    background-color: gold;
+}
+
+#blog {
+    background-color: blue;
+}
+
+#contact {
+    background-color: brown;
+}
+
+
+/* Sıfırlama ve Resetleme ile ilgili ders videolarımı izledim. Notlarım aşağıdadır:*/
+
+/*
+ -> Reset css'i ilk başta olmalı ve çalışmalı.
+ -> Reset css'i genelde normalize.css ile yapılır.
+ -> Normalize.css, tarayıcıların varsayılan stillerini sıfırlar ve daha tutarlı bir görünüm sağlar.
+ -> Genellikle tüm HTML elementlerinin varsayılan margin, padding, border, font-size, line-height, vb. değerleri sıfırlanır.
+ 
+    Kısaca bütün tarayıcılarda standart bir görünüm sağlamak için kullanılır.
+
+    Örneğin: 
+
+    body {
+    margin: 0;
+    }
+
+    -> Bu şekilde body'nin margin'ini sıfırlar ve standart bir görünüm elde edilir.
+
+
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+
+    -> Tüm elementlerin kutu modelini border-box olarak ayarlar ve standart bir görünüm eldeedilir.
+
+    Daha karmaşık bir resetleme yapmak istiyorsak:
+    -> Eric Meyer's Reset CSS kullanılabilir.
+        https://meyerweb.com/eric/tools/css/reset/
+
+    ->  Normalize.css kullanılabilir.
+        https://necolas.github.io/normalize.css/
+        
+*/
