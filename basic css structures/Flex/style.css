@@ -1,0 +1,267 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    line-height: 1.5;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;
+    border: solid 1px #000;
+    margin: 10px 0;
+    font-weight: bold;
+    letter-spacing: 10px;
+    background-color:aqua
+}
+h2{
+    text-align: center;
+    font-size: 1.5em;
+    border: solid 1px #000;
+    margin: 10px 0;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: red;
+}
+
+
+/* Flex */
+
+/*
+-> Flex bir containerin içindeki elemanları hizalamak için kullanılır.
+-> Flex bir esneklik sağlar.
+-> Flex containerin içindeki elemanlar flex item olarak adlandırılır.
+-> Item'ları hizalamak için containera display: flex; özelliği verilir.
+-> Ancak sadece container'ın içindeki elemanlar flex item olur, yani container'ın içindeki başka bir container'ın elemanları flex item olmaz.
+
+    Örnek olarak div bir containerin içindeki div elemanları flex item olur.
+   Bu elemanlar flex item olabilmek için display: flex; özelliğine sahip olmalıdır.
+   bu özellik sayesinde elemanlar birbirlerine göre hizalanabilir.
+
+Flex'in float ve position gibi kavramlardan farkı ise daha esnek ve daha temiz kod yazmamızı sağlamasıdır.
+
+*/
+
+div[class^="container"] {
+    margin: 20px 0;
+    padding: 10px;
+    border: solid 5px #ddd;
+}
+
+div.container {
+    display: flex;
+    /* 
+   flex ile inline-flex arasındaki fark ise inline-flex elemanların yan yana sıralanmasını sağlar
+ve tarayıcı penceresi küçüldüğünde elemanlar bir alt satıra geçmez. Ancak flex ile elemanlar pencereye göre şekil alır.
+    */
+}
+
+div.container div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* Flex-direction ile yön belirtme*/
+
+/*
+ ->Flex-direction ile elemanların yönünü belirleyebiliriz.  
+ ->row, row-reverse, column, column-reverse şeklinde belirleyebiliriz.
+    (default: row)
+
+    -row: elemanlar yatay olarak sıralanır.
+    -row-reverse: elemanlar yatay olarak sıralanır ancak ters sıralanır.
+    -column: elemanlar dikey olarak sıralanır.
+    -column-reverse: elemanlar dikey olarak sıralanır ancak ters sıralanır.
+
+*/
+
+/* YATAYDA */
+
+div.container2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+div.container2 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* DİKEYDE */
+
+div.container3 {
+    display: flex;
+    flex-direction: column;
+}
+
+div.container3 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* Flex-wrap ile elemanların sıralanma şeklini belirleme*/
+
+/*
+-> Flex-wrap ile elemanların sıralanma şeklini belirleyebiliriz.
+-> nowrap, wrap, wrap-reverse şeklinde belirleyebiliriz.
+    (default: nowrap)
+
+    -nowrap: elemanlar bir alt satıra geçmez tek bir satırda sıralanır.
+    -wrap: elemanlar bir alt satıra geçer ancak sıralanır.
+    -wrap-reverse: elemanlar bir alt satıra geçer ancak ters sıralanır.
+*/
+
+
+/* 
+    Eğer elemanlar sığmıyorsa bir alt satıra geçer.
+*/
+
+div.container4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.container4 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/*
+    Elemanlar sığmasa bile bir alt satıra geçmez.
+*/
+
+div.container5 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+div.container5 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+    
+}
+
+
+
+
+
+
+
+
+
