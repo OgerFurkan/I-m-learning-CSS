@@ -91,16 +91,17 @@ img {
     height: auto;
 }
 
-h1{
+h1 {
     text-align: center;
     font-size: 2em;
     border: solid 1px #000;
     margin: 10px 0;
     font-weight: bold;
     letter-spacing: 10px;
-    background-color:aqua
+    background-color: aqua
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: 1.5em;
     border: solid 1px #000;
@@ -254,14 +255,202 @@ div.container5 div {
     font-weight: bold;
     font-size: 50px;
     margin: 10px 10px;
-    
+
+}
+
+/*  Align-items ile elemanların dikeyde hizalanma şeklini belirleme */
+
+/*
+  
+  -> Align-items ile elemanların dikeyde hizalanma şeklini belirleyebiliriz.
+  -> flex-start, flex-end, center, stretch, baseline şeklinde belirleyebiliriz.
+  (default: stretch)
+  
+  -flex-start: elemanlar containerin başlangıcına göre hizalanır.
+  -flex-end: elemanlar containerin sonuna göre hizalanır.
+  -center: elemanlar containerin ortasına göre hizalanır.
+  -stretch: elemanlar containerin tamamını kaplar.
+  -baseline: elemanlar containerin satıra-yazıya göre hizalanır.
+  
+ */
+
+/*
+    Elemanlar containerin sonuna göre hizalanır.
+*/
+
+div.container6 {
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+}
+
+div.container6 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/*
+    Elemanlar containerin ortasına göre hizalanır.
+*/
+
+div.container7 {
+    display: flex;
+    align-items: center;
+    height: 300px;
+}
+
+div.container7 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* Justify-content ile elemanların yatayda hizalanma şeklini belirleme */
+
+/*
+  
+  -> Justify-content ile elemanların yatayda hizalanma şeklini belirleyebiliriz.
+  -> flex-start, flex-end, center, space-between, space-around şeklinde belirleyebiliriz.
+  (default: flex-start)
+  
+  -flex-start: elemanlar containerin başlangıcına göre hizalanır.
+  -flex-end: elemanlar containerin sonuna göre hizalanır.
+  -center: elemanlar containerin ortasına göre hizalanır.
+  -space-between: elemanlar containerin başlangıcı ve sonu arasında eşit boşluk bırakarak hizalanır.
+  -space-around: elemanlar containerin etrafında eşit boşluk bırakarak hizalanır baş ve son yarısı kadar boşluk içerir.
+  -space-evenly: elemanlar containerin etrafında ve arasında eşit boşluk bırakarak hizalanır.
+  
+ */
+
+/*
+    Elemanlar containerın sağına hizalanır.
+*/
+div.container8 {
+    display: flex;
+    justify-content: flex-end;
+    height: 300px;
+}
+
+div.container8 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* Elemanlar containerin başlangıcı ve sonu arasında eşit boşluk bırakarak hizalanır. */
+
+div.container9 {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+}
+
+div.container9 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* aling-content ile çok satırlı yapılarda elemanların dikeyde hizalanma şeklini belirleme */
+
+/*
+  
+  -> Align-content ile çok satırlı yapılarda elemanların dikeyde hizalanma şeklini belirleyebiliriz.
+  ->align-content ile align-items arasındaki fark align-items elemanların containera göre hizalanmasını sağlar,
+  ancak align-content elemanların containerin içindeki boşluğa göre hizalanmasını sağlar.
+  -> flex-start, flex-end, center, space-between, space-around, stretch şeklinde belirleyebiliriz.
+   (default: stretch)
+  
+  -flex-start: elemanlar containerin başlangıcına göre hizalanır.
+  -flex-end: elemanlar containerin sonuna göre hizalanır.
+  -center: elemanlar containerin ortasına göre hizalanır.
+  -space-between: elemanlar containerin başlangıcı ve sonu arasında eşit boşluk bırakarak hizalanır.
+  -space-around: elemanlar containerin etrafında eşit boşluk bırakarak hizalanır baş ve son yarısı kadar boşluk içerir.
+  -stretch: elemanlar containerin tamamını kaplar.
+
+  (flex-wrap: wrap; olmalıdır.)
+  
+ */
+ 
+
+
+div.container10 {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 300px;
+}
+
+div.container10 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
 }
 
 
+/* order ile elemanların sıralanma şeklini belirleme */
+
+/*
+-> Order ile elemanların sıralanma şeklini belirleyebiliriz.
+-> Varsayılan sıralama değeri 0'dır.
+-> Sıralama değeri küçük olan elemanlar önce, büyük olanlar ise sonra sıralanır.
+-> Negatif değerler de kullanılabilir.
+
+*/
+
+div.container11 {
+    display: flex;
+}
+
+div.container11 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+div.container11 div:nth-child(1) {
+    order: 2;
+}
+
+div.container11 div:nth-child(2) {
+    order: 3;
+}
+
+div.container11 div:nth-child(3) {
+    order: 1;
+}
+ 
 
 
-
-
-
-
-
+ 
