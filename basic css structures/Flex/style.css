@@ -450,6 +450,135 @@ div.container11 div:nth-child(2) {
 div.container11 div:nth-child(3) {
     order: 1;
 }
+
+/* flex-grow ile elemanların büyüme oranını belirleme */
+
+/*
+
+-> Flex-grow ile elemanların büyüme oranını belirleyebiliriz.
+-> Varsayılan değeri 0'dır.
+-> Elemanların büyüme oranı aynı ise eşit büyürler.
+-> Elemanların büyüme oranı farklı ise büyüme oranına göre büyürler.
+*/
+
+div.container12 {
+    display: flex;
+}
+
+div.container12 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+div.container12 div:nth-child(1) {
+    flex-grow: 1;
+}
+
+div.container12 div:nth-child(2) {
+    flex-grow: 2;
+}
+
+div.container12 div:nth-child(3) {
+    flex-grow: 3;
+}
+
+/* flex-shrink ile elemanların küçülme oranını belirleme */
+
+/*
+
+-> Flex-shrink ile elemanların küçülme oranını belirleyebiliriz.
+-> Varsayılan değeri 1'dir.
+-> Elemanların küçülme oranı aynı ise eşit küçülürler.
+-> Elemanların küçülme oranı farklı ise küçülme oranına göre küçülürler.
+
+*/
+
+div.container13 {
+    display: flex;
+    width: 300px;
+}
+
+div.container13 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+div.container13 div:nth-child(1) {
+    flex-shrink: 1;
+}
+
+div.container13 div:nth-child(2) {
+    flex-shrink: 2;
+}
+
+div.container13 div:nth-child(3) {
+    flex-shrink: 3;
+}
+
+/* flex-basis ile elemanların başlangıç genişliğini belirleme */
+
+/*
+
+-> Flex-basis ile elemanların başlangıç genişliğini belirleme
+-> Varsayılan değeri auto'dur.
+-> Genişlik değeri px, %, em gibi değerler alabilir.
+
+*/
+
+div.container14 {
+    display: flex;
+}
+
+div.container14 div {
+    flex-basis: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+/* flex ile elemanların genişlik oranını belirleme */
+
+/*
+
+-> Flex ile elemanların genişlik oranını belirleme
+-> Varsayılan değeri 0'dır.
+-> Genişlik değeri px, %, em gibi değerler alabilir.
+
+*/
+
+div.container15 {
+    display: flex;
+}
+
+div.container15 div {
+    flex: 1 1 auto;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+
+
  
 
 
