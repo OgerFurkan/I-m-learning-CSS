@@ -577,6 +577,61 @@ div.container15 div {
     margin: 10px 10px;
 }
 
+/* align-self ile elemanların dikeyde hizalanma şeklini belirleme */
+
+/*
+
+-> Align-self ile elemanların dikeyde hizalanma şeklini belirleme
+-> Varsayılan değeri auto'dur.
+-> flex-start, flex-end, center, stretch, baseline şeklinde belirleyebiliriz.
+-> align-items ile aynı değerleri alır. Ancak align-items container için geçerliyken align-self elemanlar için geçerlidir.
+
+*/
+
+div.container16 {
+    display: flex;
+}
+
+
+div.container16 div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 10px;
+}
+
+
+/* 
+    Elemanlar containerin başlangıcına göre hizalanır.
+*/
+
+div.container16 div:nth-child(1) {
+    align-self: flex-start;
+}
+
+/*
+    Elemanlar containerin sonuna göre hizalanır.
+*/
+
+
+div.container16 div:nth-child(2) {
+    align-self: flex-end;
+}
+
+/*
+    Elemanlar containerin ortasına göre hizalanır.
+*/
+
+div.container16 div:nth-child(3) {
+    align-self: center;
+}
+
+
+
 
 
  
