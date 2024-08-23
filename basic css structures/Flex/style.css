@@ -631,6 +631,52 @@ div.container16 div:nth-child(3) {
 }
 
 
+/* Flex ile basit sayfa düzeni */
+
+div.container17 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+
+.sidebar{
+    background-color: #e4e2e2;
+    padding: 50px;
+    
+    flex-basis: 20%;
+}
+.main{
+    background-color: #ddd;
+    padding: 50px;
+    flex: 1;
+}
+
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+
+.content{
+    background-color: #f4f4f4;
+    padding: 50px;
+    display: flex;
+    flex:1;
+}
+
+
+
+
+
+
+
+
 
 
 
