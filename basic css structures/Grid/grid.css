@@ -110,4 +110,6 @@ ol {
 
 .grid1-of-12:nth-child(12n) {
     margin-right: 0;
+    margin-left: 5px;
+    
 }
