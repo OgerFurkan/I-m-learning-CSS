@@ -158,25 +158,26 @@
             </div>
             <div class="card m-2" style="background-color:bisque;">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-              </div>
+            </div>
         </div>
         <div class="col-sm-12 col-md-8 col-lg-8">
             <div class="card m-2" style="height: 96%; background-color: beige;">
                 <div class="card-header">
-                  Featured
+                    Featured
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
-              </div>
+            </div>
         </div>
         <!-- 
         Burada bootstrap card class'ını kullandık.
@@ -184,6 +185,118 @@
         Örneğin burada bir satırda 4'e 8'lik bir yapı oluşturduk.
         -->
     </div>
+
+    <hr>
+    <h1>
+        Table
+    </h1>
+    <hr><br>
+
+    <div class="container">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Furkan</td>
+                    <td>Öger</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Sıla</td>
+                    <td>Kasalı</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Hulusi</td>
+                    <td>Öger</td>
+                    <td>58</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Burada bootstrap table class'ını kullandık. 
+         Bu şekilde sayfamıza tablo ekleyebiliriz ve ayrıca tablonun başlıklarını ve satırlarını farklı renklerde yapabiliriz.
+    -->
+    <hr>
+    <h1>
+        Form
+    </h1>
+    <hr><br>
+
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email adresi</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Email adresinizi asla başkalarıyla paylaşmayacağız.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Şifre</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Zorunlu</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Gönder</button>
+        </form>
+    </div>
+    <!-- Burada bootstrap form class'ını kullandık. 
+         Bu şekilde sayfamıza form ekleyebiliriz.
+    -->
+    <hr>
+    <h1>
+        Navbar  
+    </h1>
+    <hr><br>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg mb-5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
 
 
 
